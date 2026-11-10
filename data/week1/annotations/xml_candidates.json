@@ -1,0 +1,3991 @@
+{
+  "scene_02_f00045": [
+    {
+      "id": "0",
+      "xc": 78,
+      "yc": 71,
+      "w": 22,
+      "h": 19,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 83,
+      "yc": 68,
+      "w": 26,
+      "h": 22,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00054": [
+    {
+      "id": "0",
+      "xc": 75,
+      "yc": 76,
+      "w": 21,
+      "h": 20,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 81,
+      "yc": 74,
+      "w": 27,
+      "h": 20,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00063": [
+    {
+      "id": "0",
+      "xc": 75,
+      "yc": 81,
+      "w": 22,
+      "h": 18,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 82,
+      "yc": 77,
+      "w": 27,
+      "h": 19,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00072": [
+    {
+      "id": "0",
+      "xc": 79,
+      "yc": 96,
+      "w": 27,
+      "h": 19,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 94,
+      "yc": 83,
+      "w": 33,
+      "h": 24,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 78,
+      "yc": 65,
+      "w": 21,
+      "h": 20,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00081": [
+    {
+      "id": "0",
+      "xc": 79,
+      "yc": 96,
+      "w": 27,
+      "h": 19,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 94,
+      "yc": 83,
+      "w": 33,
+      "h": 24,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 78,
+      "yc": 65,
+      "w": 21,
+      "h": 20,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00090": [
+    {
+      "id": "0",
+      "xc": 79,
+      "yc": 96,
+      "w": 27,
+      "h": 19,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 94,
+      "yc": 83,
+      "w": 33,
+      "h": 24,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 78,
+      "yc": 65,
+      "w": 21,
+      "h": 20,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00099": [
+    {
+      "id": "0",
+      "xc": 79,
+      "yc": 96,
+      "w": 27,
+      "h": 19,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 94,
+      "yc": 83,
+      "w": 33,
+      "h": 24,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 78,
+      "yc": 65,
+      "w": 21,
+      "h": 20,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00108": [
+    {
+      "id": "0",
+      "xc": 80,
+      "yc": 99,
+      "w": 27,
+      "h": 23,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 97,
+      "yc": 82,
+      "w": 34,
+      "h": 25,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 76,
+      "yc": 73,
+      "w": 22,
+      "h": 23,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 83,
+      "yc": 65,
+      "w": 24,
+      "h": 17,
+      "appearance": "appear"
+    }
+  ],
+  "scene_02_f00117": [
+    {
+      "id": "0",
+      "xc": 82,
+      "yc": 101,
+      "w": 27,
+      "h": 21,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 102,
+      "yc": 82,
+      "w": 35,
+      "h": 25,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 77,
+      "yc": 78,
+      "w": 24,
+      "h": 19,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 80,
+      "yc": 69,
+      "w": 23,
+      "h": 17,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00126": [
+    {
+      "id": "0",
+      "xc": 88,
+      "yc": 103,
+      "w": 31,
+      "h": 19,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 109,
+      "yc": 82,
+      "w": 40,
+      "h": 26,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 76,
+      "yc": 86,
+      "w": 25,
+      "h": 24,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 84,
+      "yc": 74,
+      "w": 24,
+      "h": 24,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00135": [
+    {
+      "id": "0",
+      "xc": 91,
+      "yc": 106,
+      "w": 29,
+      "h": 22,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 113,
+      "yc": 81,
+      "w": 36,
+      "h": 27,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 76,
+      "yc": 90,
+      "w": 27,
+      "h": 18,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 89,
+      "yc": 78,
+      "w": 29,
+      "h": 23,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00144": [
+    {
+      "id": "0",
+      "xc": 95,
+      "yc": 106,
+      "w": 29,
+      "h": 21,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 119,
+      "yc": 83,
+      "w": 40,
+      "h": 28,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 73,
+      "yc": 95,
+      "w": 21,
+      "h": 18,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 91,
+      "yc": 79,
+      "w": 29,
+      "h": 23,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00153": [
+    {
+      "id": "0",
+      "xc": 104,
+      "yc": 107,
+      "w": 34,
+      "h": 20,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 124,
+      "yc": 83,
+      "w": 41,
+      "h": 27,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 79,
+      "yc": 104,
+      "w": 29,
+      "h": 24,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 98,
+      "yc": 79,
+      "w": 33,
+      "h": 23,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00162": [
+    {
+      "id": "0",
+      "xc": 108,
+      "yc": 109,
+      "w": 34,
+      "h": 25,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 131,
+      "yc": 84,
+      "w": 42,
+      "h": 26,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 81,
+      "yc": 106,
+      "w": 31,
+      "h": 21,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 103,
+      "yc": 81,
+      "w": 34,
+      "h": 26,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00171": [
+    {
+      "id": "0",
+      "xc": 112,
+      "yc": 110,
+      "w": 34,
+      "h": 23,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 137,
+      "yc": 89,
+      "w": 44,
+      "h": 34,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 87,
+      "yc": 109,
+      "w": 34,
+      "h": 20,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 106,
+      "yc": 81,
+      "w": 35,
+      "h": 25,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00180": [
+    {
+      "id": "0",
+      "xc": 122,
+      "yc": 111,
+      "w": 38,
+      "h": 23,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 140,
+      "yc": 91,
+      "w": 42,
+      "h": 31,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 91,
+      "yc": 114,
+      "w": 35,
+      "h": 25,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 113,
+      "yc": 81,
+      "w": 36,
+      "h": 25,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00189": [
+    {
+      "id": "0",
+      "xc": 127,
+      "yc": 115,
+      "w": 39,
+      "h": 27,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 151,
+      "yc": 96,
+      "w": 48,
+      "h": 33,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 95,
+      "yc": 115,
+      "w": 37,
+      "h": 23,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 118,
+      "yc": 84,
+      "w": 34,
+      "h": 30,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00198": [
+    {
+      "id": "0",
+      "xc": 131,
+      "yc": 117,
+      "w": 37,
+      "h": 25,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 154,
+      "yc": 101,
+      "w": 44,
+      "h": 35,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 102,
+      "yc": 117,
+      "w": 39,
+      "h": 21,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 122,
+      "yc": 82,
+      "w": 28,
+      "h": 24,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00207": [
+    {
+      "id": "0",
+      "xc": 142,
+      "yc": 119,
+      "w": 42,
+      "h": 25,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 162,
+      "yc": 110,
+      "w": 48,
+      "h": 36,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 109,
+      "yc": 123,
+      "w": 40,
+      "h": 27,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 137,
+      "yc": 82,
+      "w": 36,
+      "h": 27,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00216": [
+    {
+      "id": "0",
+      "xc": 147,
+      "yc": 126,
+      "w": 41,
+      "h": 30,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 173,
+      "yc": 115,
+      "w": 54,
+      "h": 36,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 115,
+      "yc": 125,
+      "w": 44,
+      "h": 25,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 145,
+      "yc": 84,
+      "w": 37,
+      "h": 28,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00225": [
+    {
+      "id": "0",
+      "xc": 153,
+      "yc": 130,
+      "w": 41,
+      "h": 28,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 179,
+      "yc": 121,
+      "w": 48,
+      "h": 32,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 123,
+      "yc": 127,
+      "w": 44,
+      "h": 25,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 157,
+      "yc": 88,
+      "w": 42,
+      "h": 34,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00234": [
+    {
+      "id": "0",
+      "xc": 164,
+      "yc": 137,
+      "w": 47,
+      "h": 31,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 187,
+      "yc": 137,
+      "w": 51,
+      "h": 43,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 131,
+      "yc": 134,
+      "w": 46,
+      "h": 31,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 173,
+      "yc": 88,
+      "w": 47,
+      "h": 35,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00243": [
+    {
+      "id": "0",
+      "xc": 167,
+      "yc": 149,
+      "w": 41,
+      "h": 34,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 194,
+      "yc": 144,
+      "w": 53,
+      "h": 32,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 134,
+      "yc": 137,
+      "w": 42,
+      "h": 27,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 187,
+      "yc": 96,
+      "w": 49,
+      "h": 42,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00252": [
+    {
+      "id": "0",
+      "xc": 172,
+      "yc": 158,
+      "w": 42,
+      "h": 27,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 205,
+      "yc": 159,
+      "w": 53,
+      "h": 35,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 139,
+      "yc": 142,
+      "w": 37,
+      "h": 27,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 199,
+      "yc": 99,
+      "w": 48,
+      "h": 38,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00261": [
+    {
+      "id": "0",
+      "xc": 181,
+      "yc": 173,
+      "w": 46,
+      "h": 32,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 207,
+      "yc": 178,
+      "w": 49,
+      "h": 40,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 150,
+      "yc": 147,
+      "w": 42,
+      "h": 25,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 214,
+      "yc": 107,
+      "w": 47,
+      "h": 38,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00270": [
+    {
+      "id": "0",
+      "xc": 183,
+      "yc": 185,
+      "w": 42,
+      "h": 29,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 210,
+      "yc": 190,
+      "w": 46,
+      "h": 31,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 160,
+      "yc": 156,
+      "w": 47,
+      "h": 28,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 230,
+      "yc": 124,
+      "w": 47,
+      "h": 49,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00279": [
+    {
+      "id": "0",
+      "xc": 186,
+      "yc": 198,
+      "w": 41,
+      "h": 26,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 219,
+      "yc": 211,
+      "w": 53,
+      "h": 38,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 177,
+      "yc": 164,
+      "w": 52,
+      "h": 30,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 245,
+      "yc": 130,
+      "w": 47,
+      "h": 37,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00288": [
+    {
+      "id": "0",
+      "xc": 191,
+      "yc": 213,
+      "w": 38,
+      "h": 36,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 222,
+      "yc": 225,
+      "w": 48,
+      "h": 25,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 187,
+      "yc": 178,
+      "w": 48,
+      "h": 37,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 263,
+      "yc": 146,
+      "w": 42,
+      "h": 35,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00297": [
+    {
+      "id": "0",
+      "xc": 199,
+      "yc": 224,
+      "w": 44,
+      "h": 20,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 222,
+      "yc": 240,
+      "w": 47,
+      "h": 44,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 194,
+      "yc": 187,
+      "w": 46,
+      "h": 30,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 280,
+      "yc": 174,
+      "w": 44,
+      "h": 46,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00306": [
+    {
+      "id": "0",
+      "xc": 202,
+      "yc": 234,
+      "w": 41,
+      "h": 31,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 224,
+      "yc": 263,
+      "w": 49,
+      "h": 31,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 212,
+      "yc": 200,
+      "w": 53,
+      "h": 32,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 291,
+      "yc": 188,
+      "w": 40,
+      "h": 31,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00315": [
+    {
+      "id": "0",
+      "xc": 209,
+      "yc": 252,
+      "w": 47,
+      "h": 27,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 228,
+      "yc": 270,
+      "w": 45,
+      "h": 33,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 219,
+      "yc": 218,
+      "w": 45,
+      "h": 34,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 302,
+      "yc": 210,
+      "w": 35,
+      "h": 31,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00324": [
+    {
+      "id": "0",
+      "xc": 213,
+      "yc": 263,
+      "w": 41,
+      "h": 24,
+      "appearance": "visible"
+    },
+    {
+      "id": "1",
+      "xc": 243,
+      "yc": 280,
+      "w": 15,
+      "h": 13,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 226,
+      "yc": 230,
+      "w": 41,
+      "h": 28,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 311,
+      "yc": 236,
+      "w": 35,
+      "h": 46,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00333": [
+    {
+      "id": "0",
+      "xc": 214,
+      "yc": 272,
+      "w": 39,
+      "h": 30,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 244,
+      "yc": 245,
+      "w": 50,
+      "h": 35,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 313,
+      "yc": 264,
+      "w": 33,
+      "h": 38,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00342": [
+    {
+      "id": "0",
+      "xc": 219,
+      "yc": 281,
+      "w": 37,
+      "h": 11,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 247,
+      "yc": 258,
+      "w": 43,
+      "h": 25,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 311,
+      "yc": 272,
+      "w": 29,
+      "h": 29,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00351": [
+    {
+      "id": "0",
+      "xc": 227,
+      "yc": 281,
+      "w": 10,
+      "h": 11,
+      "appearance": "visible"
+    },
+    {
+      "id": "2",
+      "xc": 250,
+      "yc": 267,
+      "w": 41,
+      "h": 39,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00360": [
+    {
+      "id": "2",
+      "xc": 255,
+      "yc": 277,
+      "w": 45,
+      "h": 19,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00369": [
+    {
+      "id": "2",
+      "xc": 259,
+      "yc": 277,
+      "w": 22,
+      "h": 19,
+      "appearance": "visible"
+    }
+  ],
+  "scene_02_f00378": [],
+  "scene_02_f00387": [],
+  "scene_02_f00396": [],
+  "scene_02_f00405": [],
+  "scene_02_f00414": [],
+  "scene_02_f00423": [],
+  "scene_02_f00432": [],
+  "scene_02_f00441": [],
+  "scene_02_f00450": [],
+  "scene_02_f00459": [],
+  "scene_02_f00468": [],
+  "scene_02_f00477": [],
+  "scene_02_f00486": [],
+  "scene_03_f00500": [
+    {
+      "id": "2",
+      "xc": 117,
+      "yc": 49,
+      "w": 19,
+      "h": 48,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 93,
+      "yc": 49,
+      "w": 18,
+      "h": 46,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 162,
+      "yc": 267,
+      "w": 37,
+      "h": 34,
+      "appearance": "visible"
+    },
+    {
+      "id": "12",
+      "xc": 101,
+      "yc": 27,
+      "w": 13,
+      "h": 36,
+      "appearance": "visible"
+    },
+    {
+      "id": "13",
+      "xc": 114,
+      "yc": 27,
+      "w": 15,
+      "h": 36,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00525": [
+    {
+      "id": "2",
+      "xc": 121,
+      "yc": 50,
+      "w": 19,
+      "h": 47,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 97,
+      "yc": 51,
+      "w": 18,
+      "h": 46,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 170,
+      "yc": 254,
+      "w": 51,
+      "h": 60,
+      "appearance": "visible"
+    },
+    {
+      "id": "12",
+      "xc": 101,
+      "yc": 25,
+      "w": 12,
+      "h": 33,
+      "appearance": "visible"
+    },
+    {
+      "id": "13",
+      "xc": 112,
+      "yc": 26,
+      "w": 13,
+      "h": 34,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00550": [
+    {
+      "id": "2",
+      "xc": 121,
+      "yc": 52,
+      "w": 20,
+      "h": 46,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 101,
+      "yc": 51,
+      "w": 17,
+      "h": 47,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 180,
+      "yc": 243,
+      "w": 52,
+      "h": 82,
+      "appearance": "visible"
+    },
+    {
+      "id": "12",
+      "xc": 98,
+      "yc": 24,
+      "w": 12,
+      "h": 31,
+      "appearance": "visible"
+    },
+    {
+      "id": "13",
+      "xc": 109,
+      "yc": 25,
+      "w": 12,
+      "h": 32,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00575": [
+    {
+      "id": "2",
+      "xc": 120,
+      "yc": 53,
+      "w": 20,
+      "h": 48,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 99,
+      "yc": 53,
+      "w": 18,
+      "h": 49,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 179,
+      "yc": 235,
+      "w": 55,
+      "h": 98,
+      "appearance": "visible"
+    },
+    {
+      "id": "12",
+      "xc": 94,
+      "yc": 23,
+      "w": 12,
+      "h": 29,
+      "appearance": "visible"
+    },
+    {
+      "id": "13",
+      "xc": 102,
+      "yc": 23,
+      "w": 11,
+      "h": 29,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00600": [
+    {
+      "id": "2",
+      "xc": 119,
+      "yc": 54,
+      "w": 18,
+      "h": 51,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 98,
+      "yc": 55,
+      "w": 19,
+      "h": 51,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 179,
+      "yc": 227,
+      "w": 50,
+      "h": 114,
+      "appearance": "visible"
+    },
+    {
+      "id": "12",
+      "xc": 87,
+      "yc": 23,
+      "w": 4,
+      "h": 29,
+      "appearance": "visible"
+    },
+    {
+      "id": "13",
+      "xc": 92,
+      "yc": 23,
+      "w": 7,
+      "h": 29,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00625": [
+    {
+      "id": "2",
+      "xc": 117,
+      "yc": 55,
+      "w": 21,
+      "h": 51,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 97,
+      "yc": 55,
+      "w": 19,
+      "h": 51,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 178,
+      "yc": 220,
+      "w": 40,
+      "h": 128,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00650": [
+    {
+      "id": "2",
+      "xc": 115,
+      "yc": 57,
+      "w": 26,
+      "h": 50,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 93,
+      "yc": 56,
+      "w": 19,
+      "h": 51,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 162,
+      "yc": 203,
+      "w": 48,
+      "h": 121,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 142,
+      "yc": 25,
+      "w": 6,
+      "h": 30,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00675": [
+    {
+      "id": "2",
+      "xc": 118,
+      "yc": 59,
+      "w": 19,
+      "h": 50,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 97,
+      "yc": 58,
+      "w": 20,
+      "h": 52,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 161,
+      "yc": 188,
+      "w": 44,
+      "h": 111,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 135,
+      "yc": 24,
+      "w": 11,
+      "h": 30,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00700": [
+    {
+      "id": "2",
+      "xc": 118,
+      "yc": 60,
+      "w": 19,
+      "h": 52,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 96,
+      "yc": 60,
+      "w": 21,
+      "h": 52,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 148,
+      "yc": 175,
+      "w": 40,
+      "h": 107,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 133,
+      "yc": 24,
+      "w": 8,
+      "h": 30,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00725": [
+    {
+      "id": "2",
+      "xc": 118,
+      "yc": 61,
+      "w": 21,
+      "h": 53,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 100,
+      "yc": 61,
+      "w": 17,
+      "h": 53,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 139,
+      "yc": 165,
+      "w": 38,
+      "h": 102,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 131,
+      "yc": 24,
+      "w": 8,
+      "h": 30,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00750": [
+    {
+      "id": "2",
+      "xc": 121,
+      "yc": 62,
+      "w": 20,
+      "h": 53,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 104,
+      "yc": 62,
+      "w": 19,
+      "h": 54,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 135,
+      "yc": 154,
+      "w": 39,
+      "h": 97,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 126,
+      "yc": 24,
+      "w": 12,
+      "h": 31,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00775": [
+    {
+      "id": "2",
+      "xc": 122,
+      "yc": 64,
+      "w": 20,
+      "h": 56,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 102,
+      "yc": 64,
+      "w": 19,
+      "h": 55,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 125,
+      "yc": 146,
+      "w": 39,
+      "h": 92,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 124,
+      "yc": 24,
+      "w": 12,
+      "h": 31,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00800": [
+    {
+      "id": "2",
+      "xc": 123,
+      "yc": 65,
+      "w": 22,
+      "h": 55,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 101,
+      "yc": 66,
+      "w": 19,
+      "h": 55,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 118,
+      "yc": 137,
+      "w": 35,
+      "h": 89,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 125,
+      "yc": 25,
+      "w": 12,
+      "h": 33,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00825": [
+    {
+      "id": "2",
+      "xc": 125,
+      "yc": 68,
+      "w": 20,
+      "h": 56,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 102,
+      "yc": 67,
+      "w": 19,
+      "h": 58,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 113,
+      "yc": 130,
+      "w": 33,
+      "h": 85,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 129,
+      "yc": 26,
+      "w": 12,
+      "h": 34,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00850": [
+    {
+      "id": "2",
+      "xc": 124,
+      "yc": 69,
+      "w": 21,
+      "h": 58,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 101,
+      "yc": 69,
+      "w": 20,
+      "h": 57,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 105,
+      "yc": 123,
+      "w": 33,
+      "h": 82,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 129,
+      "yc": 26,
+      "w": 13,
+      "h": 34,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00875": [
+    {
+      "id": "2",
+      "xc": 125,
+      "yc": 71,
+      "w": 22,
+      "h": 59,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 103,
+      "yc": 70,
+      "w": 20,
+      "h": 56,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 100,
+      "yc": 117,
+      "w": 30,
+      "h": 79,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 85,
+      "yc": 84,
+      "w": 20,
+      "h": 73,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 123,
+      "yc": 26,
+      "w": 13,
+      "h": 35,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00900": [
+    {
+      "id": "2",
+      "xc": 128,
+      "yc": 73,
+      "w": 23,
+      "h": 59,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 107,
+      "yc": 71,
+      "w": 21,
+      "h": 57,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 98,
+      "yc": 110,
+      "w": 28,
+      "h": 73,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 104,
+      "yc": 79,
+      "w": 24,
+      "h": 71,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 119,
+      "yc": 28,
+      "w": 13,
+      "h": 36,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00925": [
+    {
+      "id": "2",
+      "xc": 132,
+      "yc": 75,
+      "w": 23,
+      "h": 60,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 111,
+      "yc": 74,
+      "w": 18,
+      "h": 60,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 96,
+      "yc": 105,
+      "w": 27,
+      "h": 71,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 98,
+      "yc": 75,
+      "w": 23,
+      "h": 67,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 120,
+      "yc": 28,
+      "w": 14,
+      "h": 35,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00950": [
+    {
+      "id": "2",
+      "xc": 135,
+      "yc": 78,
+      "w": 24,
+      "h": 62,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 115,
+      "yc": 77,
+      "w": 21,
+      "h": 60,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 93,
+      "yc": 98,
+      "w": 27,
+      "h": 69,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 91,
+      "yc": 71,
+      "w": 17,
+      "h": 58,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 124,
+      "yc": 29,
+      "w": 16,
+      "h": 37,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f00975": [
+    {
+      "id": "2",
+      "xc": 141,
+      "yc": 79,
+      "w": 24,
+      "h": 63,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 119,
+      "yc": 79,
+      "w": 20,
+      "h": 63,
+      "appearance": "visible"
+    },
+    {
+      "id": "5",
+      "xc": 74,
+      "yc": 95,
+      "w": 23,
+      "h": 68,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 86,
+      "yc": 70,
+      "w": 19,
+      "h": 65,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 122,
+      "yc": 30,
+      "w": 14,
+      "h": 37,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01000": [
+    {
+      "id": "2",
+      "xc": 146,
+      "yc": 81,
+      "w": 24,
+      "h": 63,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 117,
+      "yc": 81,
+      "w": 25,
+      "h": 64,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 88,
+      "yc": 67,
+      "w": 20,
+      "h": 62,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 117,
+      "yc": 32,
+      "w": 12,
+      "h": 35,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01025": [
+    {
+      "id": "2",
+      "xc": 147,
+      "yc": 84,
+      "w": 24,
+      "h": 65,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 117,
+      "yc": 85,
+      "w": 24,
+      "h": 64,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 90,
+      "yc": 64,
+      "w": 19,
+      "h": 60,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 114,
+      "yc": 32,
+      "w": 12,
+      "h": 37,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01050": [
+    {
+      "id": "2",
+      "xc": 144,
+      "yc": 87,
+      "w": 25,
+      "h": 66,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 117,
+      "yc": 87,
+      "w": 24,
+      "h": 66,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 90,
+      "yc": 61,
+      "w": 19,
+      "h": 60,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 112,
+      "yc": 34,
+      "w": 13,
+      "h": 39,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01075": [
+    {
+      "id": "2",
+      "xc": 144,
+      "yc": 90,
+      "w": 25,
+      "h": 68,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 116,
+      "yc": 89,
+      "w": 25,
+      "h": 67,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 90,
+      "yc": 58,
+      "w": 14,
+      "h": 59,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 114,
+      "yc": 35,
+      "w": 17,
+      "h": 39,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01100": [
+    {
+      "id": "2",
+      "xc": 148,
+      "yc": 91,
+      "w": 24,
+      "h": 69,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 116,
+      "yc": 93,
+      "w": 25,
+      "h": 68,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 91,
+      "yc": 56,
+      "w": 15,
+      "h": 57,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 114,
+      "yc": 36,
+      "w": 18,
+      "h": 41,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01125": [
+    {
+      "id": "2",
+      "xc": 145,
+      "yc": 93,
+      "w": 24,
+      "h": 70,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 116,
+      "yc": 95,
+      "w": 25,
+      "h": 70,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 92,
+      "yc": 53,
+      "w": 15,
+      "h": 55,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 114,
+      "yc": 38,
+      "w": 17,
+      "h": 41,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01150": [
+    {
+      "id": "2",
+      "xc": 144,
+      "yc": 96,
+      "w": 23,
+      "h": 70,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 108,
+      "yc": 97,
+      "w": 27,
+      "h": 71,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 92,
+      "yc": 51,
+      "w": 18,
+      "h": 54,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 111,
+      "yc": 40,
+      "w": 15,
+      "h": 42,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01175": [
+    {
+      "id": "2",
+      "xc": 140,
+      "yc": 99,
+      "w": 26,
+      "h": 72,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 108,
+      "yc": 99,
+      "w": 28,
+      "h": 73,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 89,
+      "yc": 49,
+      "w": 18,
+      "h": 52,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 108,
+      "yc": 40,
+      "w": 16,
+      "h": 42,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01200": [
+    {
+      "id": "2",
+      "xc": 135,
+      "yc": 102,
+      "w": 25,
+      "h": 73,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 104,
+      "yc": 101,
+      "w": 30,
+      "h": 73,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 85,
+      "yc": 48,
+      "w": 18,
+      "h": 52,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 110,
+      "yc": 42,
+      "w": 16,
+      "h": 44,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01225": [
+    {
+      "id": "2",
+      "xc": 139,
+      "yc": 103,
+      "w": 25,
+      "h": 74,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 107,
+      "yc": 103,
+      "w": 29,
+      "h": 74,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 82,
+      "yc": 45,
+      "w": 16,
+      "h": 51,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 117,
+      "yc": 43,
+      "w": 16,
+      "h": 45,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01250": [
+    {
+      "id": "2",
+      "xc": 137,
+      "yc": 106,
+      "w": 30,
+      "h": 76,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 103,
+      "yc": 104,
+      "w": 29,
+      "h": 75,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 83,
+      "yc": 43,
+      "w": 16,
+      "h": 49,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 121,
+      "yc": 45,
+      "w": 17,
+      "h": 44,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01275": [
+    {
+      "id": "2",
+      "xc": 137,
+      "yc": 107,
+      "w": 29,
+      "h": 77,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 105,
+      "yc": 106,
+      "w": 29,
+      "h": 76,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 87,
+      "yc": 41,
+      "w": 15,
+      "h": 48,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 122,
+      "yc": 46,
+      "w": 17,
+      "h": 45,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01300": [
+    {
+      "id": "2",
+      "xc": 140,
+      "yc": 108,
+      "w": 25,
+      "h": 79,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 99,
+      "yc": 109,
+      "w": 31,
+      "h": 77,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 91,
+      "yc": 39,
+      "w": 15,
+      "h": 48,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 121,
+      "yc": 49,
+      "w": 17,
+      "h": 46,
+      "appearance": "visible"
+    },
+    {
+      "id": "9",
+      "xc": 356,
+      "yc": 249,
+      "w": 54,
+      "h": 70,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01325": [
+    {
+      "id": "2",
+      "xc": 143,
+      "yc": 111,
+      "w": 29,
+      "h": 79,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 92,
+      "yc": 111,
+      "w": 29,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 94,
+      "yc": 37,
+      "w": 16,
+      "h": 45,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 121,
+      "yc": 50,
+      "w": 18,
+      "h": 47,
+      "appearance": "visible"
+    },
+    {
+      "id": "8",
+      "xc": 54,
+      "yc": 241,
+      "w": 30,
+      "h": 86,
+      "appearance": "visible"
+    },
+    {
+      "id": "9",
+      "xc": 309,
+      "yc": 240,
+      "w": 62,
+      "h": 88,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01350": [
+    {
+      "id": "2",
+      "xc": 146,
+      "yc": 111,
+      "w": 25,
+      "h": 79,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 84,
+      "yc": 111,
+      "w": 28,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 93,
+      "yc": 37,
+      "w": 14,
+      "h": 44,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 120,
+      "yc": 52,
+      "w": 19,
+      "h": 48,
+      "appearance": "visible"
+    },
+    {
+      "id": "8",
+      "xc": 126,
+      "yc": 244,
+      "w": 67,
+      "h": 79,
+      "appearance": "visible"
+    },
+    {
+      "id": "9",
+      "xc": 271,
+      "yc": 229,
+      "w": 59,
+      "h": 109,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01375": [
+    {
+      "id": "2",
+      "xc": 133,
+      "yc": 113,
+      "w": 30,
+      "h": 80,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 84,
+      "yc": 111,
+      "w": 28,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 90,
+      "yc": 35,
+      "w": 15,
+      "h": 44,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 121,
+      "yc": 55,
+      "w": 19,
+      "h": 50,
+      "appearance": "visible"
+    },
+    {
+      "id": "8",
+      "xc": 159,
+      "yc": 258,
+      "w": 67,
+      "h": 52,
+      "appearance": "visible"
+    },
+    {
+      "id": "9",
+      "xc": 246,
+      "yc": 221,
+      "w": 54,
+      "h": 125,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01400": [
+    {
+      "id": "2",
+      "xc": 112,
+      "yc": 113,
+      "w": 30,
+      "h": 80,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 84,
+      "yc": 111,
+      "w": 28,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 89,
+      "yc": 32,
+      "w": 14,
+      "h": 43,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 124,
+      "yc": 57,
+      "w": 18,
+      "h": 50,
+      "appearance": "visible"
+    },
+    {
+      "id": "8",
+      "xc": 170,
+      "yc": 268,
+      "w": 28,
+      "h": 32,
+      "appearance": "visible"
+    },
+    {
+      "id": "9",
+      "xc": 228,
+      "yc": 214,
+      "w": 54,
+      "h": 140,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01425": [
+    {
+      "id": "2",
+      "xc": 108,
+      "yc": 113,
+      "w": 26,
+      "h": 80,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 84,
+      "yc": 111,
+      "w": 28,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 89,
+      "yc": 31,
+      "w": 14,
+      "h": 41,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 126,
+      "yc": 58,
+      "w": 19,
+      "h": 52,
+      "appearance": "visible"
+    },
+    {
+      "id": "8",
+      "xc": 192,
+      "yc": 283,
+      "w": 9,
+      "h": 2,
+      "appearance": "disappear"
+    },
+    {
+      "id": "9",
+      "xc": 221,
+      "yc": 200,
+      "w": 43,
+      "h": 139,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01450": [
+    {
+      "id": "2",
+      "xc": 108,
+      "yc": 113,
+      "w": 26,
+      "h": 80,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 84,
+      "yc": 111,
+      "w": 28,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 89,
+      "yc": 30,
+      "w": 14,
+      "h": 41,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 129,
+      "yc": 61,
+      "w": 19,
+      "h": 52,
+      "appearance": "visible"
+    },
+    {
+      "id": "9",
+      "xc": 205,
+      "yc": 185,
+      "w": 40,
+      "h": 130,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01475": [
+    {
+      "id": "2",
+      "xc": 108,
+      "yc": 113,
+      "w": 26,
+      "h": 80,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 84,
+      "yc": 111,
+      "w": 28,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 89,
+      "yc": 29,
+      "w": 14,
+      "h": 40,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 131,
+      "yc": 64,
+      "w": 21,
+      "h": 52,
+      "appearance": "visible"
+    },
+    {
+      "id": "9",
+      "xc": 182,
+      "yc": 172,
+      "w": 35,
+      "h": 122,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01500": [
+    {
+      "id": "2",
+      "xc": 108,
+      "yc": 113,
+      "w": 26,
+      "h": 80,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 84,
+      "yc": 111,
+      "w": 28,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 89,
+      "yc": 29,
+      "w": 14,
+      "h": 40,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 126,
+      "yc": 65,
+      "w": 20,
+      "h": 55,
+      "appearance": "visible"
+    },
+    {
+      "id": "9",
+      "xc": 164,
+      "yc": 160,
+      "w": 36,
+      "h": 116,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01525": [
+    {
+      "id": "2",
+      "xc": 108,
+      "yc": 113,
+      "w": 25,
+      "h": 80,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 84,
+      "yc": 111,
+      "w": 28,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 91,
+      "yc": 27,
+      "w": 13,
+      "h": 37,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 120,
+      "yc": 67,
+      "w": 19,
+      "h": 55,
+      "appearance": "visible"
+    },
+    {
+      "id": "9",
+      "xc": 136,
+      "yc": 149,
+      "w": 34,
+      "h": 110,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01550": [
+    {
+      "id": "2",
+      "xc": 108,
+      "yc": 113,
+      "w": 26,
+      "h": 80,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 81,
+      "yc": 111,
+      "w": 34,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 94,
+      "yc": 27,
+      "w": 12,
+      "h": 36,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 118,
+      "yc": 69,
+      "w": 20,
+      "h": 56,
+      "appearance": "visible"
+    },
+    {
+      "id": "9",
+      "xc": 95,
+      "yc": 142,
+      "w": 35,
+      "h": 104,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01575": [
+    {
+      "id": "2",
+      "xc": 108,
+      "yc": 113,
+      "w": 26,
+      "h": 80,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 78,
+      "yc": 111,
+      "w": 39,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 97,
+      "yc": 26,
+      "w": 12,
+      "h": 34,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 119,
+      "yc": 70,
+      "w": 22,
+      "h": 55,
+      "appearance": "visible"
+    },
+    {
+      "id": "9",
+      "xc": 62,
+      "yc": 158,
+      "w": 15,
+      "h": 63,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01600": [
+    {
+      "id": "2",
+      "xc": 107,
+      "yc": 113,
+      "w": 25,
+      "h": 80,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 78,
+      "yc": 111,
+      "w": 39,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 97,
+      "yc": 25,
+      "w": 12,
+      "h": 32,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 123,
+      "yc": 74,
+      "w": 23,
+      "h": 57,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01625": [
+    {
+      "id": "2",
+      "xc": 107,
+      "yc": 113,
+      "w": 25,
+      "h": 80,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 85,
+      "yc": 111,
+      "w": 25,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "6",
+      "xc": 90,
+      "yc": 25,
+      "w": 8,
+      "h": 32,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 129,
+      "yc": 77,
+      "w": 23,
+      "h": 61,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01650": [
+    {
+      "id": "2",
+      "xc": 107,
+      "yc": 113,
+      "w": 25,
+      "h": 80,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 89,
+      "yc": 111,
+      "w": 26,
+      "h": 77,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 134,
+      "yc": 81,
+      "w": 23,
+      "h": 62,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01675": [
+    {
+      "id": "2",
+      "xc": 112,
+      "yc": 115,
+      "w": 26,
+      "h": 80,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 86,
+      "yc": 114,
+      "w": 29,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 136,
+      "yc": 83,
+      "w": 23,
+      "h": 63,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01700": [
+    {
+      "id": "2",
+      "xc": 119,
+      "yc": 115,
+      "w": 29,
+      "h": 79,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 89,
+      "yc": 117,
+      "w": 34,
+      "h": 82,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 135,
+      "yc": 86,
+      "w": 24,
+      "h": 65,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01725": [
+    {
+      "id": "2",
+      "xc": 132,
+      "yc": 118,
+      "w": 31,
+      "h": 83,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 89,
+      "yc": 121,
+      "w": 31,
+      "h": 83,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 129,
+      "yc": 88,
+      "w": 25,
+      "h": 62,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01750": [
+    {
+      "id": "2",
+      "xc": 143,
+      "yc": 121,
+      "w": 33,
+      "h": 85,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 95,
+      "yc": 125,
+      "w": 30,
+      "h": 84,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 119,
+      "yc": 92,
+      "w": 25,
+      "h": 69,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01775": [
+    {
+      "id": "2",
+      "xc": 147,
+      "yc": 129,
+      "w": 34,
+      "h": 86,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 105,
+      "yc": 129,
+      "w": 32,
+      "h": 87,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 107,
+      "yc": 96,
+      "w": 23,
+      "h": 71,
+      "appearance": "visible"
+    },
+    {
+      "id": "10",
+      "xc": 61,
+      "yc": 148,
+      "w": 14,
+      "h": 55,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01800": [
+    {
+      "id": "2",
+      "xc": 148,
+      "yc": 134,
+      "w": 35,
+      "h": 89,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 107,
+      "yc": 135,
+      "w": 32,
+      "h": 89,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 96,
+      "yc": 97,
+      "w": 20,
+      "h": 70,
+      "appearance": "visible"
+    },
+    {
+      "id": "10",
+      "xc": 90,
+      "yc": 123,
+      "w": 30,
+      "h": 93,
+      "appearance": "visible"
+    },
+    {
+      "id": "11",
+      "xc": 363,
+      "yc": 230,
+      "w": 40,
+      "h": 107,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01825": [
+    {
+      "id": "2",
+      "xc": 156,
+      "yc": 139,
+      "w": 34,
+      "h": 94,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 108,
+      "yc": 139,
+      "w": 33,
+      "h": 92,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 92,
+      "yc": 99,
+      "w": 25,
+      "h": 71,
+      "appearance": "visible"
+    },
+    {
+      "id": "10",
+      "xc": 129,
+      "yc": 120,
+      "w": 33,
+      "h": 92,
+      "appearance": "visible"
+    },
+    {
+      "id": "11",
+      "xc": 337,
+      "yc": 222,
+      "w": 55,
+      "h": 123,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01850": [
+    {
+      "id": "2",
+      "xc": 157,
+      "yc": 145,
+      "w": 36,
+      "h": 96,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 113,
+      "yc": 143,
+      "w": 33,
+      "h": 94,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 91,
+      "yc": 99,
+      "w": 23,
+      "h": 71,
+      "appearance": "visible"
+    },
+    {
+      "id": "10",
+      "xc": 159,
+      "yc": 112,
+      "w": 34,
+      "h": 84,
+      "appearance": "visible"
+    },
+    {
+      "id": "11",
+      "xc": 311,
+      "yc": 216,
+      "w": 48,
+      "h": 135,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01875": [
+    {
+      "id": "2",
+      "xc": 163,
+      "yc": 150,
+      "w": 38,
+      "h": 97,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 112,
+      "yc": 150,
+      "w": 37,
+      "h": 96,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 92,
+      "yc": 99,
+      "w": 22,
+      "h": 71,
+      "appearance": "visible"
+    },
+    {
+      "id": "10",
+      "xc": 184,
+      "yc": 107,
+      "w": 31,
+      "h": 87,
+      "appearance": "visible"
+    },
+    {
+      "id": "11",
+      "xc": 283,
+      "yc": 209,
+      "w": 49,
+      "h": 149,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01900": [
+    {
+      "id": "2",
+      "xc": 165,
+      "yc": 154,
+      "w": 38,
+      "h": 101,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 115,
+      "yc": 155,
+      "w": 36,
+      "h": 100,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 92,
+      "yc": 99,
+      "w": 23,
+      "h": 71,
+      "appearance": "visible"
+    },
+    {
+      "id": "10",
+      "xc": 215,
+      "yc": 103,
+      "w": 28,
+      "h": 82,
+      "appearance": "visible"
+    },
+    {
+      "id": "11",
+      "xc": 266,
+      "yc": 194,
+      "w": 43,
+      "h": 143,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01925": [
+    {
+      "id": "2",
+      "xc": 163,
+      "yc": 163,
+      "w": 39,
+      "h": 103,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 118,
+      "yc": 161,
+      "w": 41,
+      "h": 104,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 92,
+      "yc": 99,
+      "w": 23,
+      "h": 71,
+      "appearance": "visible"
+    },
+    {
+      "id": "10",
+      "xc": 227,
+      "yc": 108,
+      "w": 5,
+      "h": 63,
+      "appearance": "occluded"
+    },
+    {
+      "id": "11",
+      "xc": 248,
+      "yc": 186,
+      "w": 50,
+      "h": 138,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01950": [
+    {
+      "id": "2",
+      "xc": 166,
+      "yc": 169,
+      "w": 42,
+      "h": 108,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 123,
+      "yc": 169,
+      "w": 38,
+      "h": 107,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 99,
+      "yc": 101,
+      "w": 26,
+      "h": 71,
+      "appearance": "visible"
+    },
+    {
+      "id": "10",
+      "xc": 303,
+      "yc": 99,
+      "w": 13,
+      "h": 80,
+      "appearance": "visible"
+    },
+    {
+      "id": "11",
+      "xc": 231,
+      "yc": 173,
+      "w": 50,
+      "h": 130,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f01975": [
+    {
+      "id": "2",
+      "xc": 179,
+      "yc": 177,
+      "w": 44,
+      "h": 109,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 129,
+      "yc": 176,
+      "w": 42,
+      "h": 110,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 99,
+      "yc": 103,
+      "w": 27,
+      "h": 73,
+      "appearance": "visible"
+    },
+    {
+      "id": "11",
+      "xc": 210,
+      "yc": 161,
+      "w": 39,
+      "h": 122,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f02000": [
+    {
+      "id": "2",
+      "xc": 185,
+      "yc": 184,
+      "w": 44,
+      "h": 116,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 140,
+      "yc": 184,
+      "w": 41,
+      "h": 115,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 101,
+      "yc": 105,
+      "w": 28,
+      "h": 75,
+      "appearance": "visible"
+    },
+    {
+      "id": "11",
+      "xc": 171,
+      "yc": 152,
+      "w": 30,
+      "h": 114,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f02025": [
+    {
+      "id": "2",
+      "xc": 188,
+      "yc": 191,
+      "w": 45,
+      "h": 119,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 143,
+      "yc": 194,
+      "w": 44,
+      "h": 118,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 97,
+      "yc": 108,
+      "w": 24,
+      "h": 76,
+      "appearance": "visible"
+    },
+    {
+      "id": "11",
+      "xc": 127,
+      "yc": 144,
+      "w": 41,
+      "h": 109,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f02050": [
+    {
+      "id": "2",
+      "xc": 201,
+      "yc": 202,
+      "w": 47,
+      "h": 125,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 142,
+      "yc": 201,
+      "w": 47,
+      "h": 125,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 88,
+      "yc": 109,
+      "w": 26,
+      "h": 77,
+      "appearance": "visible"
+    },
+    {
+      "id": "11",
+      "xc": 86,
+      "yc": 142,
+      "w": 33,
+      "h": 111,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f02075": [
+    {
+      "id": "2",
+      "xc": 213,
+      "yc": 209,
+      "w": 50,
+      "h": 130,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 151,
+      "yc": 213,
+      "w": 47,
+      "h": 130,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 82,
+      "yc": 111,
+      "w": 25,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "11",
+      "xc": 57,
+      "yc": 137,
+      "w": 7,
+      "h": 10,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f02100": [
+    {
+      "id": "2",
+      "xc": 226,
+      "yc": 220,
+      "w": 53,
+      "h": 128,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 164,
+      "yc": 219,
+      "w": 50,
+      "h": 129,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 81,
+      "yc": 111,
+      "w": 24,
+      "h": 78,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f02125": [
+    {
+      "id": "2",
+      "xc": 234,
+      "yc": 224,
+      "w": 56,
+      "h": 120,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 173,
+      "yc": 224,
+      "w": 54,
+      "h": 119,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 81,
+      "yc": 111,
+      "w": 24,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "19",
+      "xc": 370,
+      "yc": 227,
+      "w": 26,
+      "h": 114,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f02150": [
+    {
+      "id": "2",
+      "xc": 245,
+      "yc": 231,
+      "w": 58,
+      "h": 106,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 184,
+      "yc": 231,
+      "w": 52,
+      "h": 105,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 81,
+      "yc": 111,
+      "w": 24,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "17",
+      "xc": 143,
+      "yc": 28,
+      "w": 7,
+      "h": 32,
+      "appearance": "visible"
+    },
+    {
+      "id": "18",
+      "xc": 68,
+      "yc": 38,
+      "w": 10,
+      "h": 43,
+      "appearance": "visible"
+    },
+    {
+      "id": "19",
+      "xc": 340,
+      "yc": 218,
+      "w": 59,
+      "h": 131,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f02175": [
+    {
+      "id": "2",
+      "xc": 248,
+      "yc": 233,
+      "w": 57,
+      "h": 101,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 187,
+      "yc": 235,
+      "w": 56,
+      "h": 98,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 81,
+      "yc": 111,
+      "w": 24,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "17",
+      "xc": 135,
+      "yc": 28,
+      "w": 12,
+      "h": 36,
+      "appearance": "visible"
+    },
+    {
+      "id": "18",
+      "xc": 89,
+      "yc": 38,
+      "w": 21,
+      "h": 45,
+      "appearance": "visible"
+    },
+    {
+      "id": "19",
+      "xc": 288,
+      "yc": 212,
+      "w": 52,
+      "h": 144,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f02200": [
+    {
+      "id": "2",
+      "xc": 248,
+      "yc": 237,
+      "w": 59,
+      "h": 94,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 190,
+      "yc": 243,
+      "w": 55,
+      "h": 81,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 81,
+      "yc": 111,
+      "w": 24,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "17",
+      "xc": 128,
+      "yc": 28,
+      "w": 12,
+      "h": 36,
+      "appearance": "visible"
+    },
+    {
+      "id": "18",
+      "xc": 114,
+      "yc": 37,
+      "w": 10,
+      "h": 47,
+      "appearance": "visible"
+    },
+    {
+      "id": "19",
+      "xc": 248,
+      "yc": 191,
+      "w": 50,
+      "h": 130,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f02225": [
+    {
+      "id": "2",
+      "xc": 265,
+      "yc": 243,
+      "w": 65,
+      "h": 82,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 193,
+      "yc": 249,
+      "w": 61,
+      "h": 70,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 81,
+      "yc": 111,
+      "w": 24,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "17",
+      "xc": 124,
+      "yc": 28,
+      "w": 12,
+      "h": 35,
+      "appearance": "visible"
+    },
+    {
+      "id": "18",
+      "xc": 136,
+      "yc": 38,
+      "w": 18,
+      "h": 45,
+      "appearance": "visible"
+    },
+    {
+      "id": "19",
+      "xc": 218,
+      "yc": 181,
+      "w": 46,
+      "h": 130,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f02250": [
+    {
+      "id": "2",
+      "xc": 268,
+      "yc": 249,
+      "w": 64,
+      "h": 69,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 204,
+      "yc": 258,
+      "w": 56,
+      "h": 52,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 81,
+      "yc": 111,
+      "w": 24,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "17",
+      "xc": 120,
+      "yc": 29,
+      "w": 15,
+      "h": 36,
+      "appearance": "visible"
+    },
+    {
+      "id": "18",
+      "xc": 137,
+      "yc": 38,
+      "w": 17,
+      "h": 46,
+      "appearance": "visible"
+    },
+    {
+      "id": "19",
+      "xc": 198,
+      "yc": 168,
+      "w": 43,
+      "h": 121,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f02275": [
+    {
+      "id": "2",
+      "xc": 260,
+      "yc": 255,
+      "w": 65,
+      "h": 57,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 202,
+      "yc": 265,
+      "w": 45,
+      "h": 37,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 81,
+      "yc": 111,
+      "w": 24,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "17",
+      "xc": 118,
+      "yc": 30,
+      "w": 14,
+      "h": 37,
+      "appearance": "visible"
+    },
+    {
+      "id": "18",
+      "xc": 125,
+      "yc": 38,
+      "w": 17,
+      "h": 45,
+      "appearance": "visible"
+    },
+    {
+      "id": "19",
+      "xc": 180,
+      "yc": 158,
+      "w": 39,
+      "h": 115,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f02300": [
+    {
+      "id": "2",
+      "xc": 267,
+      "yc": 266,
+      "w": 60,
+      "h": 35,
+      "appearance": "visible"
+    },
+    {
+      "id": "3",
+      "xc": 202,
+      "yc": 273,
+      "w": 37,
+      "h": 21,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 81,
+      "yc": 111,
+      "w": 24,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "17",
+      "xc": 119,
+      "yc": 32,
+      "w": 16,
+      "h": 36,
+      "appearance": "visible"
+    },
+    {
+      "id": "18",
+      "xc": 102,
+      "yc": 38,
+      "w": 13,
+      "h": 46,
+      "appearance": "visible"
+    },
+    {
+      "id": "19",
+      "xc": 158,
+      "yc": 152,
+      "w": 34,
+      "h": 112,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f02325": [
+    {
+      "id": "2",
+      "xc": 294,
+      "yc": 275,
+      "w": 22,
+      "h": 18,
+      "appearance": "visible"
+    },
+    {
+      "id": "7",
+      "xc": 81,
+      "yc": 111,
+      "w": 24,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "17",
+      "xc": 119,
+      "yc": 33,
+      "w": 17,
+      "h": 38,
+      "appearance": "visible"
+    },
+    {
+      "id": "18",
+      "xc": 82,
+      "yc": 39,
+      "w": 21,
+      "h": 44,
+      "appearance": "visible"
+    },
+    {
+      "id": "19",
+      "xc": 110,
+      "yc": 145,
+      "w": 48,
+      "h": 106,
+      "appearance": "visible"
+    }
+  ],
+  "scene_03_f02350": [
+    {
+      "id": "7",
+      "xc": 84,
+      "yc": 111,
+      "w": 27,
+      "h": 78,
+      "appearance": "visible"
+    },
+    {
+      "id": "17",
+      "xc": 120,
+      "yc": 35,
+      "w": 17,
+      "h": 38,
+      "appearance": "visible"
+    },
+    {
+      "id": "19",
+      "xc": 64,
+      "yc": 139,
+      "w": 24,
+      "h": 103,
+      "appearance": "visible"
+    }
+  ]
+}

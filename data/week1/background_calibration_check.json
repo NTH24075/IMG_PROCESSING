@@ -1,0 +1,17 @@
+{
+  "static_crop": [
+    190,
+    80,
+    370,
+    270
+  ],
+  "shift_pixels": [
+    -0.1719065377913438,
+    0.0030700770843168357
+  ],
+  "phase_response": 0.9838598699481399,
+  "method": "Phase correlation on static architecture, only against warmup median; no scored test image/prediction used",
+  "needs_human_review": true,
+  "used_in_pipeline": false,
+  "rejection_reason": "Independent frame contains an unannotated distant person; not a clean full-frame background."
+}

@@ -1,0 +1,24 @@
+{
+  "images": {
+    "dev": 76,
+    "test": 75,
+    "legacy_holdout": 27
+  },
+  "review_status": {
+    "peer_reviewed": 151,
+    "human_labeled": 27
+  },
+  "backgrounds": {
+    "scene_01": "legacy_offline_median",
+    "scene_02": "reviewed",
+    "scene_03": "reviewed"
+  },
+  "scene_split": {
+    "scene_01": "dev",
+    "scene_02": "dev",
+    "scene_03": "test"
+  },
+  "technical_integrity": "pass",
+  "human_review_complete": true,
+  "test_evaluation_run": false
+}

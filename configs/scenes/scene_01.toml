@@ -1,0 +1,9 @@
+[scene]
+id = "scene_01"
+name = "Vtest — ngoài trời"
+width = 768
+height = 576
+background = "data/background.png"
+role = "dev"
+background_status = "legacy_offline_median"
+background_policy = "Legacy median from full video; offline/transductive, not causal online initialization."

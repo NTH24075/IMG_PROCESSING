@@ -1,0 +1,14 @@
+[scene]
+id = "scene_02"
+name = "Meet_Crowd"
+width = 384
+height = 288
+role = "dev"
+background = "data/week1/backgrounds/scene_02.png"
+background_status = "reviewed"
+background_policy = "Median of every 5th decoded frame in prefix [0,30); samples start at 45."
+warmup_frames = 30
+decoded_frames = 492
+fps = 25.0
+background_reviewer = "NTH"
+background_reviewed_at = "2026-10-29T13:26:32.190670+00:00"

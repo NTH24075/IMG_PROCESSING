@@ -1,0 +1,47 @@
+{
+  "version": "week1",
+  "sources": [
+    {
+      "id": "scene_01",
+      "name": "Vtest — ngoài trời",
+      "width": 768,
+      "height": 576,
+      "background": "data/background.png",
+      "role": "dev",
+      "background_status": "legacy_offline_median",
+      "background_policy": "Legacy median from full video; offline/transductive, not causal online initialization."
+    },
+    {
+      "id": "scene_02",
+      "name": "Meet_Crowd",
+      "width": 384,
+      "height": 288,
+      "role": "dev",
+      "background": "data/week1/backgrounds/scene_02.png",
+      "background_status": "needs_visual_review",
+      "background_policy": "Median of every 5th decoded frame in prefix [0,30); samples start at 45.",
+      "warmup_frames": 30,
+      "decoded_frames": 492,
+      "fps": 25.0
+    },
+    {
+      "id": "scene_03",
+      "name": "WalkByShop1cor",
+      "width": 384,
+      "height": 288,
+      "role": "test",
+      "background": "data/week1/backgrounds/scene_03.png",
+      "background_status": "needs_visual_review",
+      "background_policy": "Median of every 5th decoded frame in prefix [0,500); samples start at 500.",
+      "warmup_frames": 500,
+      "decoded_frames": 2360,
+      "fps": 25.0
+    }
+  ],
+  "counts": {
+    "dev": 76,
+    "test": 75,
+    "legacy_holdout": 27
+  },
+  "warning": "New XML labels are draft; peer review/background review are not fabricated. No test prediction was run."
+}

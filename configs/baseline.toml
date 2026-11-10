@@ -1,0 +1,17 @@
+[experiment]
+name = "baseline_week1"
+role = "baseline"
+status = "development"
+
+[processing]
+blur = 3
+thresh = 0
+min_thresh = 20
+open_k = 3
+close_k = 3
+min_area = 150
+max_area = 30000
+enhancement = "none"
+filter = "gaussian"
+backend = "opencv"
+split_merged = false

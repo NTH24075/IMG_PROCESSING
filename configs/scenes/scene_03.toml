@@ -1,0 +1,19 @@
+[scene]
+id = "scene_03"
+name = "WalkByShop1cor"
+width = 384
+height = 288
+role = "test"
+background = "data/week1/backgrounds/scene_03.png"
+background_status = "reviewed"
+background_policy = "Median of every 5th decoded frame in prefix [0,500); samples start at 500."
+warmup_frames = 500
+decoded_frames = 2360
+fps = 25.0
+roi = [[0, 65], [383, 65], [383, 287], [0, 287]]
+roi_proposal_status = "reviewed"
+roi_approved_by = "project_owner"
+roi_approved_date = "2026-10-28"
+roi_approval_source = "User message: Dùng ROI hành lang gần"
+background_reviewer = "NTH"
+background_reviewed_at = "2026-10-29T13:26:18.350776+00:00"
