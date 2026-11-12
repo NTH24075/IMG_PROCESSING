@@ -1,0 +1,21 @@
+# E3: spatial filters under noise, DEV only.
+[experiment]
+name = "e3_noise"
+base = "configs/baseline.toml"
+manifest = "data/week1/manifests/robustness_dev.csv"
+kinds = ["none", "gauss", "saltpepper"]
+
+[variants.none]
+filter = "none"
+[variants.mean3]
+filter = "mean"
+[variants.gaussian3]
+filter = "gaussian"
+[variants.gaussian5]
+filter = "gaussian"
+blur = 5
+[variants.median3]
+filter = "median"
+[variants.median5]
+filter = "median"
+blur = 5

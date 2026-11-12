@@ -39,6 +39,15 @@ def gaussian_blur(img, k):                           # Gaussian tách được: 
     out = convolve2d(convolve2d(img, g[None, :]), g[:, None])
     return np.clip(np.round(out), 0, 255).astype(np.uint8)
 
+def median_blur(img, k):                             # lọc trung vị, biên phản xạ [L4]
+    if k <= 1: return img.copy()
+    pad = np.pad(img, k // 2, mode="reflect")
+    return np.median(sliding_window_view(pad, (k, k)), axis=(-2, -1)).astype(np.uint8)
+
+def sobel(gray):                                     # đạo hàm Sobel 3x3, trả gx, gy float32 [L4-5]
+    kx = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]], np.float32)
+    return convolve2d(gray, kx), convolve2d(gray, kx.T)
+
 def abs_diff(a, b):                                  # hiệu tuyệt đối hai ảnh [L3]
     return np.abs(a.astype(np.int16) - b.astype(np.int16)).astype(np.uint8)
 
@@ -77,6 +86,23 @@ def label_components(mask, connectivity=8):          # gán nhãn bằng flood f
                           centroid=tuple(pix.mean(0)[::-1])))
         nxt += 1
     return labels, comps
+
+def label_twopass(mask, connectivity=8):             # gán nhãn tuần tự 3 lượt + union-find [L7]
+    H, W = mask.shape; labels = np.zeros((H, W), np.int32); parent = [0]
+    def find(a):
+        while parent[a] != a:
+            parent[a] = parent[parent[a]]; a = parent[a]
+        return a
+    prev = [(-1, 0), (0, -1)] + ([(-1, -1), (-1, 1)] if connectivity == 8 else [])
+    for y, x in np.argwhere(mask > 0):                # lượt 1: nhãn tạm + ghi tương đương
+        near = [labels[y + dy, x + dx] for dy, dx in prev if 0 <= y + dy and 0 <= x + dx < W and labels[y + dy, x + dx]]
+        if not near:
+            parent.append(len(parent)); labels[y, x] = len(parent) - 1; continue
+        root = min(find(n) for n in near); labels[y, x] = root
+        for n in near: parent[find(n)] = root
+    roots = np.array([find(i) for i in range(len(parent))])   # lượt 2: giải quyết lớp tương đương
+    _, compact = np.unique(roots, return_inverse=True)
+    return compact[roots][labels].astype(np.int32)    # lượt 3: gán nhãn liên tiếp 1..n (0 là nền)
 
 def count_scratch(img_bgr, bg_bgr, blur=5, thresh=0, min_thresh=20, se_open=None, se_close=None, min_area=150, max_area=30000):
     g = gaussian_blur(to_gray(img_bgr), blur); b = gaussian_blur(to_gray(bg_bgr), blur)

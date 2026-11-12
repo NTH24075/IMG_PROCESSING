@@ -94,3 +94,17 @@ def new_run(kind, root=ROOT):
     run_id = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'_'+uuid.uuid4().hex[:10]
     path = root/'outputs'/kind/run_id; path.mkdir(parents=True, exist_ok=False)
     return path
+
+
+def load_points(root=ROOT):
+    """Person points per image_id: vtest clicks + CAVIAR XML box centres. Diagnosis/calibration only, never inference."""
+    points = {}
+    clicks = root/'data/annotations.json'
+    if clicks.exists():
+        for name, xy in json.loads(clicks.read_text()).items():
+            points['scene_01_'+Path(name).stem] = [tuple(p) for p in xy]
+    boxes = root/'data/week1/annotations/xml_candidates.json'
+    if boxes.exists():
+        for image_id, items in json.loads(boxes.read_text()).items():
+            points[image_id] = [(b['xc'], b['yc']) for b in items]
+    return points

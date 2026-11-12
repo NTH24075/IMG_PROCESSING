@@ -1,0 +1,21 @@
+# E7: remove each enabled component of final.toml, and re-add each rejected one, DEV only.
+[experiment]
+name = "e7_ablation"
+base = "configs/final.toml"
+split = "dev"
+
+[variants.final]
+[variants.no_match]
+enhancement = "none"
+[variants.no_area]
+count_method = "blob"
+[variants.no_shadow]
+shadow = false
+[variants.plus_hough]
+count_method = "area_hough"
+[variants.plus_median]
+filter = "median"
+[variants.baseline]
+enhancement = "none"
+shadow = false
+count_method = "blob"

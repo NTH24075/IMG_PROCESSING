@@ -1,31 +1,25 @@
 """Predict one new image without any ground-truth input."""
 import argparse
-from object_counting.io import ROOT, load_params, load_scene, read_image, resolve, new_run
+from object_counting.io import ROOT, load_params, load_scene, read_image, resolve, new_run, digest
 from object_counting.pipeline import count_image
 from object_counting.visualization import save_prediction
-from object_counting.evaluation_guard import authorize, audit
+from object_counting.experiments import touches_test, check_freeze, log_test_run
 
 
 def predict(image_path, scene_id, config='configs/baseline.toml'):
     image_path=resolve(image_path)
-    request=authorize([dict(image_id=image_path.stem,image=str(image_path),scene_id=scene_id,split='dev')],
-                      resolve(config),'dev',purpose='single_image_prediction')
+    # A renamed copy of a test image is still a test image; same freeze rule as run_eval.
+    if image_path.is_file() and touches_test([dict(image_id=image_path.stem,sha256=digest(image_path))]):
+        log_test_run(ROOT,event='single_image_prediction',image=str(image_path),config=str(config),**check_freeze(config))
     params, _ = load_params(config)
     scene, background, roi = load_scene(scene_id)
-    image = read_image(resolve(image_path))
-    if scene.get('background_status') != 'reviewed':
+    image = read_image(image_path)
+    if scene.get('background_status') not in ('reviewed','legacy_offline_median'):
         print('Lưu ý: nền cảnh này còn cần nhóm rà soát.')
-    try:
-        prediction = count_image(image, background, params, roi)
-        path = new_run('predictions')
-        save_prediction(path, image, prediction, dict(image=str(image_path), scene_id=scene_id,
-                                                    background_status=scene.get('background_status')))
-    except Exception as error:
-        if request:
-            audit(dict(request_id=request,status='failed',reason=str(error)))
-        raise
-    if request:
-        audit(dict(request_id=request,status='completed',run_id=path.name))
+    prediction = count_image(image, background, params, roi, scene.get('perspective'))
+    path = new_run('predictions')
+    save_prediction(path, image, prediction, dict(image=str(image_path), scene_id=scene_id,
+                                                background_status=scene.get('background_status')))
     return prediction, path
 
 
