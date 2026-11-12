@@ -1,0 +1,20 @@
+# E2 (C1): normalisation methods under lighting degradation, DEV only.
+[experiment]
+name = "e2_lighting"
+base = "configs/baseline.toml"
+manifest = "data/week1/manifests/robustness_dev.csv"
+kinds = ["none", "gamma", "contrast", "gain"]
+
+[variants.none]
+enhancement = "none"
+[variants.gamma07]
+enhancement = "gamma"
+gamma = 0.7
+[variants.stretch]
+enhancement = "percentile"
+[variants.equalize_separate]
+enhancement = "equalize_separate"
+[variants.match1]
+enhancement = "match1"
+[variants.match2]
+enhancement = "match2"

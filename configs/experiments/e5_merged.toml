@@ -1,0 +1,14 @@
+# E5 (C3): four ways to count merged blobs on original DEV images.
+[experiment]
+name = "e5_merged"
+base = "configs/baseline.toml"
+split = "dev"
+
+[variants.blob]
+count_method = "blob"
+[variants.area]
+count_method = "area"
+[variants.area_hough]
+count_method = "area_hough"
+[variants.watershed]
+split_merged = true

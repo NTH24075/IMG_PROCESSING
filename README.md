@@ -1,4 +1,4 @@
-# Object Counting in Surveillance Images — tuần 1
+# Object Counting in Surveillance Images — v3
 
 Hệ thống xử lý ảnh cổ điển, dùng camera cố định và nền tương ứng. Video màu được lấy mẫu; pipeline chính chuyển grayscale → enhancement/filter → trừ nền → threshold → morphology → contour → số đếm. Giữ ảnh màu để hiển thị. Không huấn luyện deep learning.
 
@@ -10,7 +10,7 @@ uv sync --locked
 uv run python app.py
 ```
 
-Demo Tk cục bộ: chọn scene_01 hoặc scene_02, chọn ảnh đúng camera rồi bấm **Đếm ảnh**. Ctrl+O chọn ảnh; Ctrl+Enter chạy. Không cần nhãn. scene_03 được giữ test và bị khóa trước freeze.
+Demo Tk cục bộ: chọn scene_01 hoặc scene_02, chọn ảnh đúng camera rồi bấm **Đếm ảnh**. Ctrl+O chọn ảnh; Ctrl+Enter chạy. Không cần nhãn. Ảnh test (scene_03, holdout vtest) chỉ chạy sau tag freeze-test.
 
 Ví dụ ảnh mới không nhãn:
 
@@ -61,22 +61,47 @@ uv run python run_eval.py --config configs/baseline.toml --split dev --compare-s
 
 Baseline đã xử lý thành công 76/76 ảnh dev, không lỗi; toàn bộ 151 nhãn bộ chính đã peer_reviewed. Run outputs/experiments/20261029T171005Z_8392ad33ef cho MAE=1.000, RMSE=1.348, exact-count Acc=38.16%, Bias=-0.947 trên 76 dev. Đối chiếu số nhãn và tính lại chỉ số ngày 30/10/2026 khớp kết quả đã lưu. Đây là mốc baseline, chưa phải kết quả test hoặc cấu hình cuối. --include-draft chỉ dùng cho dev, phải gọi kết quả là tạm thời nếu có draft trong bộ dữ liệu khác.
 
-run_baseline.py là wrapper tương thích, có cùng gate. Không dùng --frames/--gt/--bg cũ để tạo một evaluator khác; dùng manifest nhiều cảnh. Mỗi run có predictions.csv, metrics.json, environment.json, config.toml và ví dụ ảnh. Có ảnh lỗi thì CLI trả mã lỗi, không coi là đánh giá hoàn chỉnh.
+run_baseline.py là wrapper tương thích, cùng freeze guard. Không dùng --frames/--gt/--bg cũ để tạo một evaluator khác; dùng manifest nhiều cảnh. Mỗi run có predictions.csv, metrics.json, environment.json, config.toml và ví dụ ảnh. Có ảnh lỗi thì CLI trả mã lỗi, không coi là đánh giá hoàn chỉnh.
 
-## Test đang khóa
+## v3: C1–C3, benchmark độ bền, chẩn đoán lỗi
 
-Không có configs/test_freeze.json thật trong tuần 1. --split test, --split all, manifest chứa test, ảnh test đổi tên nguyên nội dung và chọn camera test trong demo bị kiểm tra. Nhật ký outputs/test_audit.jsonl ghi request/allowed/denied/completed/failed.
+Pipeline v3 thêm cờ trong `[processing]` (mặc định = baseline, test hồi quy 26 dev giữ nguyên):
 
-Tuần 2, sau khi nhãn chính peer_reviewed và nền được duyệt theo ROI đã chốt, TV1 + TV5 mới đóng băng cả baseline và final:
+| Cờ | Giá trị | Đóng góp |
+|---|---|---|
+| `enhancement` | none, gamma, percentile, equalize_separate, **match1**, **match2** | C1 histogram matching I→B (2 lượt: bỏ foreground thô khỏi CDF) |
+| `filter` | none, mean, gaussian, median (cả backend scratch) | E3 |
+| `shadow` (+ `shadow_lo/hi/t_grad/k`) | true/false | C2 tỉ số I/B + |ΔSobel| |
+| `fill_holes`, `labeling` (bfs, twopass) | | Lấp lỗ; gán nhãn 3 lượt + union-find (backend scratch) |
+| `count_method` (+ `cap`, `head_vote`) | blob, **area**, area_hough; watershed = `split_merged=true` | C3 mô hình diện tích theo phối cảnh + Hough đầu |
+
+Mô hình phối cảnh nằm ở `[scene.perspective]` trong `configs/scenes/scene_0x.toml`, chỉ fit từ dev:
 
 ```bash
-# Chỉ chạy ở mốc cuối ngày 10, sau rà soát và chọn final thật:
-uv run python freeze_test.py --configs configs/baseline.toml configs/final.toml --reviewers "Nguoi_1" "Nguoi_2"
-uv run python run_eval.py --config configs/baseline.toml --split test
-uv run python run_eval.py --config configs/final.toml --split test
+uv run python calibrate_scene.py            # scene_01, scene_02; scene_03 không có dev nên C3 tự lùi về 1 blob = 1 người
+uv run python make_robustness.py            # data/week1/manifests/robustness_{dev,test}.csv; ảnh suy giảm sinh trong bộ nhớ
+uv run python run_eval.py --experiment configs/experiments/e5_merged.toml   # mỗi biến thể một run + summary.csv + figures/
+uv run python run_eval.py --manifest data/week1/manifests/robustness_dev.csv --config configs/final.toml
+uv run python run_benchmark.py              # E6 tự cài vs OpenCV
 ```
 
-final.toml chưa được tạo vì tuần 1 chưa chọn final. Gate gắn hash mã/cấu hình/manifest/ảnh/nền/nhãn, không chỉ tên final hay cờ boolean. Đổi snapshot bị từ chối. Đây là rào chắn chống chạy nhầm, không chống người cố ý sửa mã hoặc log. Holdout lịch sử nằm ngoài freeze chính và cần protocol riêng. Không tuning theo test.
+Thí nghiệm: `e2_lighting`, `e3_noise`, `e4_shadow`, `e5_merged`, `e7_ablation`, `e8_robustness_final` trong configs/experiments/. Mỗi run ghi config.toml đã giải quyết, git.json, predictions.csv, metrics.json (by_scene, by_condition), error_types.csv (merge/split/false_blob/miss từ điểm click vtest và tâm box CAVIAR), environment.json. Kết quả dev ngày 12/11/2026 và lý do chọn final: docs/decisions.md.
+
+## Test: freeze nhẹ bằng git tag
+
+Mọi manifest chứa image_id/sha256 của test.csv hoặc legacy_holdout.csv (kể cả robustness_test, manifest ghép, ảnh đổi tên, predict.py) chỉ chạy khi: working tree sạch, HEAD trùng tag `freeze-test` (hoặc `freeze-test-N` mới nhất), config đã commit. Một dòng được append vào outputs/test_runs.log **trước** khi đọc ảnh test; không ghi được log thì không chạy. Đây là rào chắn chống chạy nhầm, không phải bảo mật.
+
+```bash
+# Cuối ngày 10, sau khi nhóm chốt final.toml (hiện là PROPOSAL):
+git add -A && git commit -m "Freeze baseline + final"
+git tag freeze-test
+uv run python run_eval.py --config configs/baseline.toml --split test
+uv run python run_eval.py --config configs/final.toml --split test
+uv run python run_eval.py --config configs/final.toml --split legacy_holdout
+uv run python run_eval.py --config configs/final.toml --manifest data/week1/manifests/robustness_test.csv
+```
+
+Sửa lỗi sau test: commit, `git tag freeze-test-2`, ghi vào docs/decisions.md, báo cáo nêu số lần chạy test.
 
 ## Khảo sát tuần 1
 
@@ -94,17 +119,15 @@ Có CSV thời gian OpenCV/NumPy trên 4 ảnh dev cố định, seed=42 cho nhi
 uv run python -m unittest discover -s tests -v
 ```
 
-Kiểm tra core, nhãn/review, ROI, hai đối tượng tổng hợp, gate/freeze/audit và hồi quy toàn bộ 26 dev của cả hai backend. Test hồi quy cần data vtest sẵn có. Các test freeze dùng dữ liệu giả trong thư mục tạm; không phải chạy test thật.
+Kiểm tra core, preprocessing/matching, degrade, shadow, gán nhãn 3 lượt, phối cảnh/Hough, loại lỗi, freeze guard (repo git giả trong thư mục tạm) và hồi quy toàn bộ 26 dev của cả hai backend. Test hồi quy cần data vtest sẵn có.
 
-- object_counting/: pipeline, IO, preprocessing, segmentation, regions, metrics, evaluation guard, experiments, visualization, annotation.
-- configs/: phương pháp và cảnh; trạng thái phát triển, chưa có final/freeze.
+- object_counting/: pipeline, IO, degrade, preprocessing, segmentation, regions, counting, metrics, experiments (runner + freeze), visualization, annotation.
+- configs/: baseline, final (proposal), experiments/eN.toml, scenes/ (kèm phối cảnh).
 - data/week1/: manifests, frames, nền ứng viên, nhãn có provenance.
 - tests/: unittest và bảng baseline chụp trước khi chuyển mã.
 - docs/: annotation_guide.md, decisions.md.
 - tasks/: plan.md, todo.md — trạng thái thật, có mục cần người nhóm.
 - reports/: nháp phương pháp và bảng/hình tuần 1.
-
-Thư mục chưa có Git repository; đã giữ snapshot trước thay đổi trong work/week1_before của chat. Dùng quy trình Git của nhóm khi đưa mã vào repo chung, không có commit giả danh thành viên.
 
 ## Việc cần nhóm hoàn tất
 

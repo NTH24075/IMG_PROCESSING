@@ -1,0 +1,14 @@
+# E4 (C2): shadow removal off/on on original DEV images; see error_types in summary.csv.
+[experiment]
+name = "e4_shadow"
+base = "configs/baseline.toml"
+split = "dev"
+
+[variants.off]
+shadow = false
+[variants.on]
+shadow = true
+[variants.on_strict]
+shadow = true
+shadow_hi = 0.85
+shadow_t_grad = 15.0

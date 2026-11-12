@@ -24,10 +24,10 @@ def validate():
                 if old!=split:raise ValueError('Scene crosses dev/test')
     backgrounds={scene:load_scene(scene)[0]['background_status'] for scene in scene_splits}
     active_ids={r['image_id'] for split in ('dev','test') for r in groups[split]}
-    audit_path=ROOT/'outputs/test_audit.jsonl'
+    log_path=ROOT/'outputs/test_runs.log'
     import json
-    events=[json.loads(line) for line in audit_path.read_text().splitlines() if line.strip()] if audit_path.exists() else []
-    test_started=any(e.get('status')=='allowed' and e.get('purpose')=='evaluation' for e in events)
+    events=[json.loads(line) for line in log_path.read_text().splitlines() if line.strip()] if log_path.exists() else []
+    test_started=any(e.get('event')=='start' for e in events)
     summary=dict(images={k:len(v) for k,v in groups.items()},review_status=dict(Counter(r['review_status'] for r in labels)),
                  backgrounds=backgrounds,scene_split=scene_splits,
                  technical_integrity='pass',human_review_complete=all(r['review_status']=='peer_reviewed' for r in labels if r['image_id'] in active_ids),

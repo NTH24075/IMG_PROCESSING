@@ -1,0 +1,14 @@
+# Robustness curve of final vs baseline on robustness_dev (DEV). The same file with
+# manifest = robustness_test is E8 and only runs after the freeze-test tag.
+[experiment]
+name = "final_vs_baseline_robustness"
+base = "configs/final.toml"
+manifest = "data/week1/manifests/robustness_dev.csv"
+
+[variants.final]
+[variants.baseline]
+enhancement = "none"
+shadow = false
+count_method = "blob"
+[variants.final_median]
+filter = "median"

@@ -1,0 +1,21 @@
+# PROPOSAL chosen on DEV from E2–E5 + E7 (2026-11-12): C1 match2 + C2 shadow + C3 area model; Hough and median gave no dev gain. Team confirms at the day-7 milestone, commits, then tags freeze-test.
+[experiment]
+name = "final_v3"
+role = "final"
+status = "proposal"
+
+[processing]
+blur = 3
+thresh = 0
+min_thresh = 20
+open_k = 3
+close_k = 3
+min_area = 150
+max_area = 30000
+enhancement = "match2"
+filter = "gaussian"
+backend = "opencv"
+split_merged = false
+shadow = true
+count_method = "area"
+cap = 6

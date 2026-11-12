@@ -29,7 +29,7 @@ class CountingApp:
         ttk.Entry(options,textvariable=self.config,width=48).pack(side='left',padx=10)
         self.run_button=ttk.Button(options,text='Đếm ảnh',command=self.run); self.run_button.pack(side='left')
         self.result=ttk.Label(frame,text='Chưa có kết quả',font=('Sans',15,'bold')); self.result.pack(anchor='w',pady=5)
-        self.status=ttk.Label(frame,text='Chọn đúng cảnh và ảnh. scene_03 là test, đang khóa trước freeze.',wraplength=1000)
+        self.status=ttk.Label(frame,text='Chọn đúng cảnh và ảnh. Ảnh test (scene_03, holdout vtest) chỉ chạy được sau tag freeze-test.',wraplength=1000)
         self.status.pack(anchor='w',pady=(0,10))
         self.preview=ttk.Label(frame,anchor='center'); self.preview.pack(fill='both',expand=True)
         self.saved=ttk.Label(frame,text='',wraplength=1000); self.saved.pack(anchor='w',pady=(10,0))

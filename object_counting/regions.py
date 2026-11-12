@@ -8,13 +8,34 @@ def se(k):
     return cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (k, k))
 
 
-def clean_mask(raw, open_k, close_k, backend='opencv'):
+def fill_holes(mask):
+    """Fill background pockets not connected to the border (flood fill from a padded corner)."""
+    padded = np.pad(mask, 1); flood = padded.copy()
+    cv2.floodFill(flood, None, (0, 0), 255)
+    return mask | cv2.bitwise_not(flood)[1:-1, 1:-1]
+
+
+def morph_gradient(mask, k=3):
+    """Morphological gradient (dilation − erosion) used to draw blob boundaries."""
+    return cv2.morphologyEx(mask, cv2.MORPH_GRADIENT, se(k))
+
+
+def twopass_components(mask):
+    labels = scratch.label_twopass(mask)
+    components = []
+    for label in range(1, int(labels.max())+1):
+        ys, xs = np.nonzero(labels == label)
+        components.append(dict(label=label, area=len(xs), bbox=(xs.min(), ys.min(), xs.max(), ys.max())))
+    return labels, components
+
+
+def clean_mask(raw, open_k, close_k, backend='opencv', holes=False):
     mask = raw.copy()
     if open_k > 1:
         mask = scratch.opening(mask, se(open_k)) if backend == 'scratch' else cv2.morphologyEx(mask, cv2.MORPH_OPEN, se(open_k))
     if close_k > 1:
         mask = scratch.closing(mask, se(close_k)) if backend == 'scratch' else cv2.morphologyEx(mask, cv2.MORPH_CLOSE, se(close_k))
-    return mask
+    return fill_holes(mask) if holes else mask
 
 
 def watershed_contours(mask, ratio):
@@ -40,17 +61,17 @@ def watershed_contours(mask, ratio):
     return contours
 
 
-def extract_regions(mask, minimum, maximum, backend='opencv', split_merged=False, ratio=.5):
+def extract_regions(mask, minimum, maximum, backend='opencv', split_merged=False, ratio=.5, labeling='bfs'):
     if backend == 'scratch':
         if split_merged:
             raise ValueError('Watershed is an OpenCV-only experimental branch')
-        _, components = scratch.label_components(mask)
+        _, components = (twopass_components if labeling == 'twopass' else scratch.label_components)(mask)
         keep = [c for c in components if minimum <= c['area'] <= maximum]
         regions = []
         for c in keep:
             x0, y0, x1, y1 = map(int, c['bbox'])
             regions.append(dict(area=float(c['area']), area_definition='pixel_count',
-                                bbox=[x0, y0, x1-x0+1, y1-y0+1]))
+                                bbox=[x0, y0, x1-x0+1, y1-y0+1], y_bottom=y1+1))
         return regions, []
     if split_merged:
         contours = watershed_contours(mask, ratio)
@@ -61,6 +82,6 @@ def extract_regions(mask, minimum, maximum, backend='opencv', split_merged=False
     for c in contours:
         area = float(cv2.contourArea(c)); x,y,w,h = cv2.boundingRect(c)
         hull_area = cv2.contourArea(cv2.convexHull(c))
-        regions.append(dict(area=area, area_definition='contour_area', bbox=[x,y,w,h],
+        regions.append(dict(area=area, area_definition='contour_area', bbox=[x,y,w,h], y_bottom=y+h,
                             aspect_ratio=w/h, extent=area/(w*h), solidity=area/hull_area if hull_area else 0))
     return regions, contours
