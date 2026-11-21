@@ -70,6 +70,18 @@ class CoreTests(unittest.TestCase):
         result = count_image(image, bg, Params(blur=1, open_k=1, close_k=1, min_area=10), roi)
         self.assertEqual(result.count, 1)
 
+    def test_roi_edge_uses_body_centre(self):
+        # Label rule: count when the centre of the visible body is inside the ROI, whatever part crosses the edge.
+        bg = np.zeros((60, 100, 3), np.uint8)
+        roi = np.zeros((60, 100), np.uint8); roi[:, :50] = 255
+        p = Params(blur=1, open_k=1, close_k=1, min_area=10)
+        centre_out = bg.copy(); centre_out[10:30, 40:70] = 255   # 10 px inside, centre x=55
+        centre_in = bg.copy(); centre_in[10:30, 30:60] = 255     # centre x=45
+        self.assertEqual(count_image(centre_out, bg, p, roi).count, 0)
+        result = count_image(centre_in, bg, p, roi)
+        self.assertEqual(result.count, 1)
+        self.assertEqual(result.regions[0]['bbox'][2], 30)       # full width kept, not clipped at the ROI edge
+
 
 if __name__ == '__main__':
     unittest.main()

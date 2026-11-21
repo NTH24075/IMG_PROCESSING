@@ -87,6 +87,19 @@ uv run python run_benchmark.py              # E6 tự cài vs OpenCV
 
 Thí nghiệm: `e2_lighting`, `e3_noise`, `e4_shadow`, `e5_merged`, `e7_ablation`, `e8_robustness_final` trong configs/experiments/. Mỗi run ghi config.toml đã giải quyết, git.json, predictions.csv, metrics.json (by_scene, by_condition), error_types.csv (merge/split/false_blob/miss từ điểm click vtest và tâm box CAVIAR), environment.json. Kết quả dev ngày 12/11/2026 và lý do chọn final: docs/decisions.md.
 
+## Khoảng tin cậy
+
+metrics.json (overall, by_scene, by_condition) và summary.csv của thí nghiệm có KTC 95% cho MAE/RMSE/Bias bằng **bootstrap khối**: lấy mẫu lại từng khối 5 ảnh liên tiếp trong cùng cảnh, 2000 lần, seed 0. Không lấy mẫu từng ảnh riêng lẻ vì khung kề nhau gần như trùng nhau, sẽ cho khoảng quá hẹp. So sánh hai phương pháp dùng hiệu MAE ghép cặp (cùng ảnh được lấy mẫu cho cả hai).
+
+## So sánh với phương pháp khác: HOG + SVM
+
+```bash
+uv run python run_hog_baseline.py                      # dev; so với configs/final.toml
+uv run python run_hog_baseline.py --config configs/baseline.toml
+```
+
+Bộ phát hiện người HOG + SVM tuyến tính (Dalal & Triggs 2005, mô hình có sẵn của OpenCV, không huấn luyện) chạy trên cùng ảnh, nhãn và ROI với pipeline contour; đếm khung có tâm nằm trong ROI (cùng quy tắc với nhãn và contour), sau NMS (IoU 0.3). Ảnh được đưa về rộng 384 px rồi phóng ×3 (chọn trên dev) vì cửa sổ HOG 64×128 cần người cao khoảng 128 px. Dự án dùng opencv-contrib-python vì OpenCV 5 bản thường đã bỏ HOGDescriptor. Kết quả dev ngày 15/11/2026 (run 20261115T065548Z_624027628a sau khi thống nhất quy tắc ROI, 76 ảnh): contour (final) MAE 0.592 [KTC 95% 0.26–0.97], Acc 60.5%, 7.6 ms/ảnh; HOG MAE 1.500 [1.21–1.82], Acc 15.8%, 216 ms/ảnh; MAE(HOG)−MAE(contour) = 0.91 [0.33–1.45] (run 20261115T070128Z_7915f7cb7d). Cùng freeze guard với run_eval.py khi manifest chạm ảnh test.
+
 ## Test: freeze nhẹ bằng git tag
 
 Mọi manifest chứa image_id/sha256 của test.csv hoặc legacy_holdout.csv (kể cả robustness_test, manifest ghép, ảnh đổi tên, predict.py) chỉ chạy khi: working tree sạch, HEAD trùng tag `freeze-test` (hoặc `freeze-test-N` mới nhất), config đã commit. Một dòng được append vào outputs/test_runs.log **trước** khi đọc ảnh test; không ghi được log thì không chạy. Đây là rào chắn chống chạy nhầm, không phải bảo mật.
@@ -134,3 +147,13 @@ Kiểm tra core, preprocessing/matching, degrade, shadow, gán nhãn 3 lượt, 
 Checkpoint nhãn/nền và phần mềm đã đạt sau kiểm chứng ngày 30/10/2026: 151 nhãn chính peer_reviewed, hai nền mới reviewed, dữ liệu pass và 16 unittest qua. Còn xác nhận với giảng viên phạm vi người+cần nền, 5 bước, bài báo và hạn nộp. Tiếp theo chẩn đoán lỗi dev, thử cải tiến bù sáng/segmentation theo bằng chứng và đánh giá lại các biến thể; chưa chọn final hoặc chạy test.
 
 Tài liệu chính: hai bản kế hoạch v2 trong thư mục IMG_processing và báo cáo trạng thái tuần 1 xuất kèm chat.
+
+## Công cụ cho số liệu báo cáo (dev)
+
+```bash
+uv run python run_c3_cv.py                      # kiểm định chéo khối thời gian cho C3 (K = 2, 5, 10)
+uv run python run_bootstrap_sweep.py --run outputs/experiments/<run_final_dev>   # chọn độ dài khối bootstrap
+uv run python compare_runs.py --a <run_baseline> --b <run_final>                 # ∆MAE ghép cặp
+```
+
+Đánh giá test (chỉ sau tag `freeze-test`, cây sạch): `run_eval.py --split test` cho baseline và final, `run_hog_baseline.py --split test`, `run_eval.py --experiment configs/experiments/e8_robustness_test.toml`.

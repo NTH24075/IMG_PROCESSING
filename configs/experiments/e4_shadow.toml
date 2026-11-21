@@ -8,6 +8,9 @@ split = "dev"
 shadow = false
 [variants.on]
 shadow = true
+[variants.on_hi085]   # only the upper ratio bound changed (report §3.4)
+shadow = true
+shadow_hi = 0.85
 [variants.on_strict]
 shadow = true
 shadow_hi = 0.85

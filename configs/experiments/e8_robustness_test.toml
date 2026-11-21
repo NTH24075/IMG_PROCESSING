@@ -1,0 +1,12 @@
+# E8 robustness on the TEST scene (scene_03, 75 images x 18 conditions). Runs only from a clean tree at the latest
+# freeze-test tag (experiments.check_freeze). Same variants as e8_robustness_final.toml (DEV) minus the rejected median.
+[experiment]
+name = "e8_robustness_test"
+base = "configs/final.toml"
+manifest = "data/week1/manifests/robustness_test.csv"
+
+[variants.final]
+[variants.baseline]
+enhancement = "none"
+shadow = false
+count_method = "blob"

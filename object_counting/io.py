@@ -12,6 +12,7 @@ import numpy as np
 from .pipeline import Params
 
 ROOT = Path(__file__).resolve().parents[1]
+MIN_SCENE_INLIERS = 30  # dev frames: true scene >=143 inliers, unrelated images <=6 (2026-11-15)
 
 
 def resolve(path, root=ROOT):
@@ -86,6 +87,43 @@ def load_scene(scene_id, root=ROOT):
             raise ValueError('Invalid ROI polygon')
         roi = np.zeros((height, width), np.uint8); cv2.fillPoly(roi, [points], 255)
     return scene, background, roi
+
+
+def _orb_features(image, width=384):
+    # Fixed working width so frames of any resolution yield comparable keypoints.
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) if image.ndim == 3 else image
+    gray = cv2.resize(gray, (width, max(1, round(gray.shape[0]*width/gray.shape[1]))), interpolation=cv2.INTER_AREA)
+    return cv2.ORB_create(nfeatures=1500).detectAndCompute(gray, None)
+
+
+def detect_scene(image, root=ROOT, min_inliers=MIN_SCENE_INLIERS):
+    """Pick the scene whose background shares the most geometrically consistent ORB matches.
+
+    ORB keypoints (corners, invariant to rotation/brightness) are matched to each background with
+    Lowe's ratio test; RANSAC then keeps only matches agreeing on one homography, so moving people
+    and chance matches are discarded. Score = inlier count (higher is better). Image size is not used.
+    Returns (scene_id, scores); raises ValueError when no scene reaches min_inliers.
+    """
+    keypoints, descriptors = _orb_features(image)
+    matcher = cv2.BFMatcher(cv2.NORM_HAMMING)
+    scores = {}
+    for path in sorted((root/'configs/scenes').glob('*.toml')):
+        scene, background, _ = load_scene(path.stem, root)
+        bg_keypoints, bg_descriptors = _orb_features(background)
+        score = 0
+        if descriptors is not None and bg_descriptors is not None and len(bg_descriptors) >= 2:
+            good = [m for m, n in (p for p in matcher.knnMatch(descriptors, bg_descriptors, k=2) if len(p) == 2)
+                    if m.distance < 0.75*n.distance]
+            if len(good) >= 4:
+                src = np.float32([keypoints[m.queryIdx].pt for m in good])
+                dst = np.float32([bg_keypoints[m.trainIdx].pt for m in good])
+                _, mask = cv2.findHomography(src, dst, cv2.RANSAC, 5.0)
+                score = int(mask.sum()) if mask is not None else 0
+        scores[scene['id']] = score
+    best = max(scores, key=scores.get)
+    if scores[best] < min_inliers:
+        raise ValueError(f'Ảnh không khớp nền của cảnh nào (tốt nhất {best}: {scores[best]} điểm khớp).')
+    return best, scores
 
 
 def new_run(kind, root=ROOT):

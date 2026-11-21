@@ -17,13 +17,13 @@ import cv2
 import numpy as np
 from .io import ROOT, resolve, read_csv, write_csv, write_json, load_scene, load_params, read_image, new_run, digest, load_points
 from .pipeline import count_image
-from .metrics import counting_metrics, error_types
+from .metrics import counting_metrics, metrics_with_ci, error_types
 from .degrade import degrade
 from .visualization import save_prediction
 
 REVIEWED = {'human_labeled','reviewed','peer_reviewed'}
 TEST_SPLITS = ('test','legacy_holdout')
-ERROR_KINDS = ('merge','split','false_blob','miss')
+ERROR_KINDS = ('merge','over_assign','split','false_blob','miss')
 
 
 def _git(root, *args):
@@ -157,16 +157,16 @@ def evaluate(config, split='dev', manifest=None, compare_scratch=False, include_
                    background_status={sid:x[0].get('background_status') for sid,x in scenes.items()},
                    perspective={sid:x[0].get('perspective') for sid,x in scenes.items()},
                    config=meta.get('experiment',{}),params=asdict(params))
-    summary['overall'] = counting_metrics([r['pred_cv'] for r in labelled],[r['gt'] for r in labelled]) if labelled else None
+    summary['overall'] = metrics_with_ci([r['pred_cv'] for r in labelled],[r['gt'] for r in labelled],[r['scene_id'] for r in labelled]) if labelled else None
     summary['by_scene'] = {}; summary['by_condition'] = {}
     groups = defaultdict(list)
     for r in labelled:
         groups[f"{r['kind']}:{r['level']}" if r['kind']!='none' else 'none'].append(r)
     for scene in sorted({r['scene_id'] for r in predictions}):
         subset = [r for r in labelled if r['scene_id']==scene]
-        summary['by_scene'][scene] = counting_metrics([r['pred_cv'] for r in subset],[r['gt'] for r in subset]) if subset else None
+        summary['by_scene'][scene] = metrics_with_ci([r['pred_cv'] for r in subset],[r['gt'] for r in subset],[scene]*len(subset)) if subset else None
     for key,subset in groups.items():
-        summary['by_condition'][key] = counting_metrics([r['pred_cv'] for r in subset],[r['gt'] for r in subset])
+        summary['by_condition'][key] = metrics_with_ci([r['pred_cv'] for r in subset],[r['gt'] for r in subset],[r['scene_id'] for r in subset])
     if diagnosis:
         summary['error_types'] = {k:int(sum(d[k] for d in diagnosis)) for k in ERROR_KINDS}
     if compare_scratch and labelled:
@@ -197,7 +197,8 @@ def run_experiment(spec, root=ROOT):
                                kinds=head.get('kinds'),examples=0)
         for key,m in sorted(summary['by_condition'].items()):
             kind,_,level = key.partition(':')
-            table.append(dict(variant=name,run_id=run.name,kind=kind,level=level,N=m['N'],MAE=m['MAE'],RMSE=m['RMSE'],
+            table.append(dict(variant=name,run_id=run.name,kind=kind,level=level,N=m['N'],MAE=m['MAE'],
+                              MAE_lo=m['MAE_CI95'][0],MAE_hi=m['MAE_CI95'][1],RMSE=m['RMSE'],
                               Bias=m['Bias'],Acc=m['Acc'],**{k:'' for k in ERROR_KINDS}))
         if summary.get('error_types') and len(summary['by_condition'])==1:
             table[-1].update(summary['error_types'])

@@ -1,4 +1,7 @@
-"""Benchmark B: write robustness_dev.csv / robustness_test.csv. Images are generated in memory at eval time."""
+"""Benchmark B: write robustness_dev.csv / robustness_test.csv. Images are generated in memory at eval time.
+
+robustness_test covers only the transfer-test scene (test.csv). The 27 legacy vtest holdout images are not part of
+this report's evaluation and would mix a scene where C3 is active into the test-scene benchmark."""
 from object_counting.io import ROOT, read_csv, write_csv
 from object_counting.degrade import GRID, seed_for
 
@@ -17,7 +20,7 @@ def expand(rows):
 
 def main(root=ROOT):
     folder = root/'data/week1/manifests'
-    for name, sources in [('robustness_dev', ['dev']), ('robustness_test', ['test', 'legacy_holdout'])]:
+    for name, sources in [('robustness_dev', ['dev']), ('robustness_test', ['test'])]:
         rows = expand([r for s in sources for r in read_csv(folder/f'{s}.csv')])
         write_csv(folder/f'{name}.csv', rows, rows[0].keys())
         print(name, len(rows))

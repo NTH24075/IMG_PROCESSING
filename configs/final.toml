@@ -1,8 +1,9 @@
-# PROPOSAL chosen on DEV from E2–E5 + E7 (2026-11-12): C1 match2 + C2 shadow + C3 area model; Hough and median gave no dev gain. Team confirms at the day-7 milestone, commits, then tags freeze-test.
+# FINAL, chosen on DEV only from E2–E5 + E7 (2026-11-12): C1 match2 + C2 shadow + C3 area model; Hough and median
+# gave no dev gain (report Bảng 7). Frozen 2026-11-21 with tag freeze-test before the single test run.
 [experiment]
 name = "final_v3"
 role = "final"
-status = "proposal"
+status = "frozen"
 
 [processing]
 blur = 3

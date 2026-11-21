@@ -41,3 +41,30 @@
 - Độ bền final (run 20261112T135149Z_cea5afcc8d, robustness_dev): MAE tệ nhất theo loại — final: contrast 0.61, gain 0.59, gamma 0.66, gauss 0.63, **saltpepper 1.63**; baseline: 13.47 / 4.20 / 2.22 / 1.05 / 1.14. final+median: saltpepper 0.78 nhưng dev sạch 0.632. **Cần nhóm chốt ở mốc ngày 7**: ưu tiên dev sạch (final hiện tại) hay độ bền muối tiêu (thêm `filter = "median"`).
 - E6 (outputs/benchmarks/20261112T135315Z_ad7fbfccb2): bản tự cài khớp OpenCV ≥99% pixel (Gaussian 0.990 do kernel), chậm hơn 2–200×; Hough tự cài ~386 ms/ảnh so với cv2.HoughCircles ~3 ms (khác thuật toán, chỉ so số lượng/thời gian).
 - Tất cả số trên là dev; perspective, α và final đều chọn trên dev nên MAE dev lạc quan. Số báo cáo cuối phải lấy từ test sau freeze.
+
+# Thống nhất quy tắc đếm ở biên ROI (15/11/2026, trước freeze, chưa xem test)
+
+- Trước đây ba bên dùng ba quy tắc: nhãn = tâm phần cơ thể nhìn thấy trong ROI (annotation_guide); contour = cắt mặt nạ theo ROI (người chỉ một phần trong ROI vẫn được đếm, diện tích bị cắt làm lệch mô hình phối cảnh); HOG = điểm chân trong ROI.
+- Nay contour và HOG cùng theo quy tắc của nhãn: đếm vùng/khung có **tâm bbox** nằm trong ROI. Contour không cắt mặt nạ nữa nên vùng vắt qua biên giữ nguyên diện tích. Test: tests/test_core.py::test_roi_edge_uses_body_centre.
+- Chỉ ảnh hưởng scene_03 (scene_01/02 dùng toàn ảnh): dev không đổi — final MAE 0.592 (run 20261115T065548Z_624027628a), HOG 1.500. Ảnh hưởng trên scene_03 chưa đo vì scene_03 chỉ có ảnh test.
+- Rủi ro đã biết: ngoài ROI scene_03 nền còn người, tiền cảnh rác ở vùng xa có thể dính vào người ở sát biên ROI và kéo tâm ra ngoài. Quyết định dựa trên định nghĩa nhãn, không dựa trên kết quả test.
+
+# Khoảng tin cậy bootstrap khối (15/11/2026)
+
+- metrics_with_ci / paired_mae_difference (metrics.py): khối 5 ảnh liên tiếp trong cùng cảnh, 2000 lần, seed 0. Bootstrap từng ảnh trên dev cho MAE contour [0.42, 0.78]; bootstrap khối rộng hơn [0.26, 0.97] vì tính đến tương quan giữa các khung kề nhau — dùng bootstrap khối trong báo cáo.
+- HOG − contour (dev, ghép cặp): 0.91 [0.33, 1.45] → contour tốt hơn có ý nghĩa trên dev.
+- E7 (run 20261115T070203Z_c0a1b3b924): chỉ mô hình diện tích (no_area 1.000 [0.63, 1.37] so với final 0.592 [0.26, 0.97]) tách rõ; khác biệt của match2, shadow, median (0.59–0.63) nằm gọn trong sai số ngẫu nhiên của 76 ảnh dev, không được viết là cải thiện có ý nghĩa.
+
+# Đồng bộ code với báo cáo và freeze (21/11/2026)
+
+- Đối chiếu báo cáo PDF (bao_cao_object_counting.pdf) với code; sửa các chỗ báo cáo có số nhưng code chưa sinh ra:
+  - `metrics.error_types` thêm loại **gán thừa** (`over_assign` = max(0, n−m) trên vùng có m≥1). Năm loại khớp Bảng 5/7; đẳng thức sai số có dấu có unit test.
+  - `run_c3_cv.py`: kiểm định chéo K khối thời gian liên tiếp cho C3, chỉ trên dev. K=5: MAE 0.868 [0.49, 1.26]; so với trong mẫu +0.276 [0.07, 0.53]; so với cơ sở +0.132 [−0.03, 0.29]; vtest p 0.117–0.122 (93–107 vùng), Meet_Crowd p 0.011–0.053 (21–38 vùng). Run 20261121T033819Z_9144319d2f.
+  - `run_bootstrap_sweep.py`: KTC MAE với khối 1/3/5/10 = [0.43, 0.78] / [0.33, 0.88] / [0.26, 0.97] / [0.24, 1.07]; giữ khối 5.
+  - `compare_runs.py`: ∆MAE ghép cặp giữa hai lần chạy đã có (không xử lý lại ảnh).
+- `predict.py` và `app.py` mặc định dùng `configs/final.toml` (trước là baseline, nên demo không chạy C1–C3 như báo cáo mô tả).
+- `make_robustness.py`: `robustness_test.csv` chỉ gồm 75 ảnh scene_03 × 18 điều kiện; bỏ 27 ảnh holdout vtest, vì báo cáo không dùng chúng và C3 vẫn bật trên vtest. Quyết định dựa trên phạm vi báo cáo, chưa xem kết quả test.
+- E4 thêm biến thể `on_hi085` (chỉ đổi cận trên 0.85): MAE 0.987, giống cấu hình mặc định. MAE 1.000 chỉ xuất hiện khi đổi thêm t_grad=15 (`on_strict`). **Báo cáo §3.4 phải sửa câu "Với cận trên 0,85, MAE trở lại 1,000".**
+- E6 thêm cột trùng tuyệt đối: mọi thao tác trùng 100% với OpenCV, trừ Gauss 5×5 (85.5% trùng tuyệt đối, ≥98.5% trong ±1). Tham chiếu của so khớp histogram là NumPy np.interp, vì OpenCV không có hàm này.
+- Kiểm tra lại toàn bộ trên dev sau khi sửa: Bảng 5, 6 (dòng phát triển), 7 không đổi so với báo cáo.
+- `final.toml` chuyển sang `status = "frozen"`; cấu hình không đổi (match2 + shadow + area). Tag `freeze-test` đặt sau commit này, rồi mới chạy test một lần.

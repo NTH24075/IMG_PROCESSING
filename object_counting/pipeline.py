@@ -101,8 +101,6 @@ def count_image(image, background, params=None, roi=None, perspective=None):
     gray, bg_gray = prepare_pair(image, background, p.enhancement, p.gamma, p.filter, p.blur, p.backend)
     prepared = perf_counter()
     diff, raw, threshold = foreground(gray, bg_gray, p.thresh, p.min_thresh, p.backend)
-    if roi is not None:
-        raw = cv2.bitwise_and(raw, roi)
     stages = dict(gray=gray, background_gray=bg_gray, diff=diff, mask_raw=raw)
     if p.shadow:
         shadow, ratio, dgrad = shadow_mask(gray, bg_gray, raw, p.shadow_lo, p.shadow_hi, p.shadow_t_grad, p.shadow_k, p.backend)
@@ -110,9 +108,13 @@ def count_image(image, background, params=None, roi=None, perspective=None):
         stages.update(ratio=ratio, dgrad=dgrad, shadow=(shadow*255).astype(np.uint8), mask_noshadow=raw)
     segmented = perf_counter()
     mask = clean_mask(raw, p.open_k, p.close_k, p.backend, p.fill_holes)
-    if roi is not None:
-        mask = cv2.bitwise_and(mask, roi)
     regions, contours = extract_regions(mask, p.min_area, p.max_area, p.backend, p.split_merged, p.watershed_ratio, p.labeling)
+    if roi is not None:
+        # Same rule as the labels (annotation_guide): a person counts when the centre of the visible body
+        # (bbox centre) lies in the ROI. The mask is NOT clipped, so a body crossing the ROI edge keeps its full area.
+        inside = [roi[min(y+h//2, roi.shape[0]-1), min(x+w//2, roi.shape[1]-1)] > 0 for x, y, w, h in (r['bbox'] for r in regions)]
+        contours = [c for c, ok in zip(contours, inside) if ok] if contours else contours
+        regions = [r for r, ok in zip(regions, inside) if ok]
     labelled = perf_counter()
     kept, heads = count_regions(regions, gray, mask, perspective, p.count_method, p.cap, p.head_vote, p.backend)
     if contours and len(kept) != len(regions):

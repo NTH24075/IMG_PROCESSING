@@ -9,7 +9,7 @@ from object_counting.io import load_scene
 
 
 class CountingApp:
-    def __init__(self, root, image='', scene='scene_01', config='configs/baseline.toml'):
+    def __init__(self, root, image='', scene='auto', config='configs/final.toml'):
         self.root=root; root.title('Object Counting · Phòng thí nghiệm ảnh'); root.geometry('1100x780')
         root.minsize(760,580)
         style=ttk.Style(); style.configure('TButton',padding=7); style.configure('TLabel',font=('Sans',11))
@@ -19,7 +19,7 @@ class CountingApp:
         controls=ttk.Frame(frame); controls.pack(fill='x')
         self.scene=tk.StringVar(value=scene); self.image=tk.StringVar(value=image); self.config=tk.StringVar(value=config)
         ttk.Label(controls,text='Cảnh camera').grid(row=0,column=0,sticky='w')
-        ttk.Combobox(controls,textvariable=self.scene,values=['scene_01','scene_02','scene_03'],state='readonly',width=13).grid(row=1,column=0,sticky='w',padx=(0,10))
+        ttk.Combobox(controls,textvariable=self.scene,values=['auto','scene_01','scene_02','scene_03'],state='readonly',width=13).grid(row=1,column=0,sticky='w',padx=(0,10))
         ttk.Label(controls,text='Ảnh đầu vào').grid(row=0,column=1,sticky='w')
         ttk.Entry(controls,textvariable=self.image).grid(row=1,column=1,sticky='ew',padx=(0,10))
         ttk.Button(controls,text='Chọn ảnh…',command=self.choose).grid(row=1,column=2)
@@ -46,7 +46,7 @@ class CountingApp:
         try:
             if not self.image.get().strip():
                 raise ValueError('Bạn cần chọn ảnh trước khi đếm.')
-            result,path=predict(self.image.get(),self.scene.get(),self.config.get())
+            result,path,scene_id=predict(self.image.get(),self.scene.get(),self.config.get())
             image=cv2.imread(str(path/'panel.png'))
             max_width=max(700,self.root.winfo_width()-60)
             max_height=max(240,self.root.winfo_height()-290)
@@ -54,8 +54,8 @@ class CountingApp:
             image=cv2.resize(image,(int(image.shape[1]*scale),int(image.shape[0]*scale)))
             self.photo=tk.PhotoImage(data=base64.b64encode(cv2.imencode('.png',image)[1].tobytes()))
             self.preview.config(image=self.photo)
-            self.result.config(text=f'Dự đoán: {result.count} người · {result.timings_ms["pipeline"]:.1f} ms xử lý')
-            scene,_,_=load_scene(self.scene.get())
+            self.result.config(text=f'Cảnh: {scene_id} · Dự đoán: {result.count} người · {result.timings_ms["pipeline"]:.1f} ms xử lý')
+            scene,_,_=load_scene(scene_id)
             self.status.config(text='Hoàn tất. Trạng thái nền: '+scene.get('background_status','unknown')+' — số đếm là dự đoán, không phải nhãn thật.')
             self.saved.config(text='Kết quả đã lưu: '+str(path)); self.last_output=path
         except Exception as error:
@@ -67,8 +67,8 @@ class CountingApp:
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--image',default=''); parser.add_argument('--scene',default='scene_01')
-    parser.add_argument('--config',default='configs/baseline.toml'); args=parser.parse_args()
+    parser.add_argument('--image',default=''); parser.add_argument('--scene',default='auto')
+    parser.add_argument('--config',default='configs/final.toml'); args=parser.parse_args()
     root=tk.Tk(); CountingApp(root,args.image,args.scene,args.config); root.mainloop()
 
 

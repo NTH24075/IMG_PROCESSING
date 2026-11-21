@@ -17,11 +17,11 @@ def timed(fn, repeats=3):
     return out, float(np.median(times))
 
 
-def same(a, b, crop=0):
+def same(a, b, crop=0, tol=1):
     a, b = np.asarray(a), np.asarray(b)
     if crop:
         a, b = a[crop:-crop, crop:-crop], b[crop:-crop, crop:-crop]
-    return float((np.abs(a.astype(float)-b.astype(float)) <= 1).mean())
+    return float((np.abs(a.astype(float)-b.astype(float)) <= tol).mean())
 
 
 def cases(gray, bg):
@@ -57,17 +57,19 @@ def main():
         for name, mine, ref, crop in cases(gray, bg):
             a, t_mine = timed(mine); b, t_ref = timed(ref)
             agree = '' if crop is None else same(a, b, crop) if np.ndim(a) else float(abs(float(a)-float(b)) <= 1)
+            exact = '' if crop is None else same(a, b, crop, 0) if np.ndim(a) else float(float(a) == float(b))
             table.append(dict(image_id=row['image_id'], op=name, scratch_ms=round(t_mine, 3), opencv_ms=round(t_ref, 3),
-                              agreement=agree, scratch_value=a if np.ndim(a) == 0 else '', opencv_value=b if np.ndim(b) == 0 else ''))
+                              agreement=agree, exact=exact, scratch_value=a if np.ndim(a) == 0 else '', opencv_value=b if np.ndim(b) == 0 else ''))
     path = new_run('benchmarks')
     write_csv(path/'e6_scratch_vs_opencv.csv', table, table[0].keys())
     write_json(path/'protocol.json', dict(split='dev', images=[r['image_id'] for r in sample], timing='median of 3 after 1 warm-up, ms',
-        agreement='fraction of pixels within ±1 (border cropped) or equal scalar; hough: counts only (different algorithms)'))
+        agreement='fraction of pixels within ±1 (border cropped) or scalars within 1', exact='fraction exactly equal', reference='match_lut: OpenCV has no histogram matching; reference is an independent NumPy np.interp mapping', hough='counts only (different algorithms)'))
     for op in dict.fromkeys(r['op'] for r in table):
         sub = [r for r in table if r['op'] == op]
-        agree = [r['agreement'] for r in sub if r['agreement'] != '']
-        print(f"{op:<14} scratch {np.median([r['scratch_ms'] for r in sub]):9.2f} ms  opencv {np.median([r['opencv_ms'] for r in sub]):8.2f} ms"
-              f"  agreement {np.mean(agree) if agree else float('nan'):.3f}")
+        agree = [r['agreement'] for r in sub if r['agreement'] != '']; exact = [r['exact'] for r in sub if r['exact'] != '']
+        print(f"{op:<14} scratch {np.mean([r['scratch_ms'] for r in sub]):9.2f} ms  opencv {np.mean([r['opencv_ms'] for r in sub]):8.2f} ms"
+              f"  ±1 {np.mean(agree) if agree else float('nan'):.3f}  exact {np.mean(exact) if exact else float('nan'):.3f}"
+              f"  (min ±1 {min(agree) if agree else float('nan'):.3f})")
     print('Output:', path)
 
 
