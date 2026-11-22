@@ -6,7 +6,7 @@
 - Baseline đã tái lập trên 26 dev trước khi tách; pipeline mới cho số đếm giống hệt ở cả OpenCV và NumPy. Snapshot mã/nhãn/nền cũ được giữ trong work/week1_before của chat.
 - Chỉ dùng prefix đã định để tạo nền ứng viên: scene_02 [0,30), scene_03 [0,500), lấy mỗi 5 frame. Sampling bắt đầu sau prefix. Nền hành lang có dấu vết người ở xa, chưa được nhóm duyệt; không lấy thêm khung test để làm sạch.
 - Nhãn 125 ảnh CAVIAR là draft_xml; chưa có kiểm tra chéo. Không giả danh thành viên nhóm để tự đặt peer_reviewed.
-- Dùng Tk/ttk cho demo desktop và rà soát vì Python hiện tại đã có Tk; không thêm thư viện web hoặc dependency mới. Một cửa sổ, điều khiển có nhãn, chọn file, thông báo lỗi/rỗng/thành công, Ctrl+O/Ctrl+Enter; GUI không giữ thuật toán riêng.
+- Demo `app.py` là web cục bộ dựng bằng `http.server` (thư viện chuẩn): Tk của Python do uv cài không có Xft nên chữ tiếng Việt bị mất dấu, răng cưa. Công cụ rà soát vẫn dùng Tk/ttk. Không thêm thư viện web hoặc dependency mới. Một cửa sổ, điều khiển có nhãn, chọn file, thông báo lỗi/rỗng/thành công, Ctrl+O/Ctrl+Enter; GUI không giữ thuật toán riêng.
 - Pipeline chủ đạo grayscale; giữ ảnh màu cho overlay. LUT enhancement dùng chung cho ảnh/nền; percentile LUT ước lượng từ nền.
 - Scratch backend triển khai grayscale/Gaussian/Otsu/morphology/BFS; median/mean là nhánh OpenCV, không gọi đó là tự cài NumPy.
 - Watershed là thử nghiệm OpenCV, mặc định tắt. Khảo sát sơ bộ trên 26 nhãn dev cũ chưa cải thiện MAE; không chốt làm mặc định khi cảnh mới chưa có nhãn kiểm chứng.

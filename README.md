@@ -10,7 +10,7 @@ uv sync --locked
 uv run python app.py
 ```
 
-Demo Tk cục bộ: chọn scene_01 hoặc scene_02, chọn ảnh đúng camera rồi bấm **Đếm ảnh**. Ctrl+O chọn ảnh; Ctrl+Enter chạy. Không cần nhãn. Ảnh test (scene_03, holdout vtest) chỉ chạy sau tag freeze-test.
+Demo web cục bộ (chỉ thư viện chuẩn, tự mở trình duyệt tại http://127.0.0.1:8765/): chọn scene_01 hoặc scene_02, kéo thả/chọn ảnh đúng camera rồi bấm **Đếm ảnh**. Ctrl+O chọn ảnh; Ctrl+Enter chạy; `--port`, `--no-browser` tuỳ chọn. Không cần nhãn. Ảnh test (scene_03, holdout vtest) chỉ chạy sau tag freeze-test.
 
 Ví dụ ảnh mới không nhãn:
 
