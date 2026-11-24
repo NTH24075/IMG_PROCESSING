@@ -39,7 +39,7 @@ class FreezeGuardTests(unittest.TestCase):
         self.git('tag', 'freeze-test')
         self.assertEqual(check_freeze('configs/baseline.toml', self.root)['tag'], 'freeze-test')
         (self.root/'configs/baseline.toml').write_text('[processing]\nblur = 5\n')
-        with self.assertRaisesRegex(ValueError, 'sạch'):
+        with self.assertRaisesRegex(ValueError, 'not clean'):
             check_freeze('configs/baseline.toml', self.root)
 
     def test_latest_tag_must_be_head_and_config_committed(self):
@@ -54,7 +54,7 @@ class FreezeGuardTests(unittest.TestCase):
             check_freeze('configs/other.toml', self.root)
 
     def test_evaluate_refuses_test_before_reading_and_logs_nothing(self):
-        with self.assertRaisesRegex(ValueError, 'KHÓA'):
+        with self.assertRaisesRegex(ValueError, 'LOCKED'):
             evaluate('configs/baseline.toml', 'test', root=self.root)
         self.assertFalse((self.root/'outputs/test_runs.log').exists())
 

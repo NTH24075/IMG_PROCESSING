@@ -31,12 +31,12 @@ def digest(path):
 def read_image(path):
     path = Path(path)
     if not path.is_file():
-        raise ValueError('Không tìm thấy ảnh: '+str(path))
+        raise ValueError('Image not found: '+str(path))
     image = cv2.imread(str(path))
     if image is None:
-        raise ValueError('Không đọc được ảnh: '+str(path))
+        raise ValueError('Cannot read image: '+str(path))
     if image.shape[0]*image.shape[1] > 20_000_000:
-        raise ValueError('Ảnh vượt quá 20 triệu pixel')
+        raise ValueError('Image exceeds 20 megapixels')
     return image
 
 
@@ -122,7 +122,7 @@ def detect_scene(image, root=ROOT, min_inliers=MIN_SCENE_INLIERS):
         scores[scene['id']] = score
     best = max(scores, key=scores.get)
     if scores[best] < min_inliers:
-        raise ValueError(f'Ảnh không khớp nền của cảnh nào (tốt nhất {best}: {scores[best]} điểm khớp).')
+        raise ValueError(f'Image does not match any scene background (best {best}: {scores[best]} matched points).')
     return best, scores
 
 

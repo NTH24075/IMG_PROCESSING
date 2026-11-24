@@ -30,7 +30,7 @@ def _git(root, *args):
     try:
         return subprocess.run(['git',*args],cwd=root,capture_output=True,text=True,check=True).stdout.strip()
     except (OSError,subprocess.CalledProcessError) as error:
-        raise ValueError('git '+' '.join(args)+' thất bại: '+str(getattr(error,'stderr','') or error).strip()) from error
+        raise ValueError('git '+' '.join(args)+' failed: '+str(getattr(error,'stderr','') or error).strip()) from error
 
 
 def touches_test(rows, root=ROOT):
@@ -45,14 +45,14 @@ def touches_test(rows, root=ROOT):
 
 def check_freeze(config, root=ROOT):
     if _git(root,'status','--porcelain'):
-        raise ValueError('TEST ĐANG KHÓA: working tree chưa sạch (commit hoặc bỏ thay đổi trước).')
+        raise ValueError('TEST LOCKED: working tree is not clean (commit or discard changes first).')
     tags = [t for t in _git(root,'tag','--list','freeze-test*').split() if re.fullmatch(r'freeze-test(-\d+)?',t)]
     if not tags:
-        raise ValueError('TEST ĐANG KHÓA: chưa có tag freeze-test.')
+        raise ValueError('TEST LOCKED: no freeze-test tag yet.')
     latest = max(tags,key=lambda t:int(t[12:]) if len(t)>11 else 1)
     head = _git(root,'rev-parse','HEAD')
     if _git(root,'rev-list','-n','1',latest) != head:
-        raise ValueError(f'TEST ĐANG KHÓA: HEAD không trùng tag mới nhất {latest}.')
+        raise ValueError(f'TEST LOCKED: HEAD does not match the latest tag {latest}.')
     _git(root,'ls-files','--error-unmatch',str(resolve(config,root).relative_to(root)))
     return dict(commit=head,tag=latest)
 

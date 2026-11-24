@@ -22,7 +22,7 @@ def predict(image_path, scene_id='auto', config='configs/final.toml'):
         # shortcut: plain resize assumes same camera framing; a cropped frame will misalign with the background.
         image = cv2.resize(image, background.shape[1::-1], interpolation=cv2.INTER_AREA)
     if scene.get('background_status') not in ('reviewed','legacy_offline_median'):
-        print('Lưu ý: nền cảnh này còn cần nhóm rà soát.')
+        print('Note: this scene background still needs team review.')
     prediction = count_image(image, background, params, roi, scene.get('perspective'))
     path = new_run('predictions')
     save_prediction(path, image, prediction, dict(image=str(image_path), scene_id=scene_id,
@@ -32,14 +32,14 @@ def predict(image_path, scene_id='auto', config='configs/final.toml'):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--image',required=True); parser.add_argument('--scene',default='auto',help="scene id hoặc 'auto' (tự nhận theo nền)")
+    parser.add_argument('--image',required=True); parser.add_argument('--scene',default='auto',help="scene id or 'auto' (detect from background)")
     parser.add_argument('--config',default='configs/final.toml')
     args=parser.parse_args()
     try:
         result,path,scene_id=predict(args.image,args.scene,args.config)
     except (ValueError,OSError,KeyError) as error:
         parser.exit(2,str(error)+'\n')
-    print(f'Cảnh: {scene_id} | Dự đoán: {result.count} | Kết quả: {path}')
+    print(f'Scene: {scene_id} | Predicted: {result.count} | Output: {path}')
 
 
 if __name__=='__main__':

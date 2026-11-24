@@ -1,7 +1,7 @@
-"""GIAI ĐOẠN 1b: gán nhãn đếm bằng cách CLICK vào từng đối tượng (người).
-Chuột trái: thêm điểm | Chuột phải hoặc phím u: xóa điểm gần nhất/cuối | Space hoặc n: lưu + ảnh kế
-b: ảnh trước | q: lưu + thoát.   Mặc định chỉ hiện ảnh chưa gán nhãn (thêm --all để xem lại tất cả).
-Quy ước đếm (GHI VÀO BÁO CÁO): đếm người nhìn thấy ít nhất ~50% cơ thể; người bị cắt ở mép ảnh vẫn đếm nếu thấy rõ.
+"""STAGE 1b: count labelling by CLICKING on each object (person).
+Left click: add point | Right click: remove nearest point, u: remove last point | Space or n: save + next image
+b: previous image | q: save + quit.   By default only unlabelled images are shown (add --all to review all).
+Counting rule (RECORD IN THE REPORT): count people with at least ~50% of the body visible; people cut off at the image edge still count if clearly visible.
 """
 import argparse, json, os, cv2, pandas as pd
 
@@ -15,7 +15,7 @@ a = ap.parse_args()
 df = pd.read_csv(a.gt); df["count"] = df["count"].astype("Int64")
 pts_db = json.load(open(a.points)) if os.path.exists(a.points) else {}
 todo = [i for i in range(len(df)) if a.all or pd.isna(df.loc[i, "count"])]
-if not todo: print("Đã gán nhãn xong tất cả."); raise SystemExit
+if not todo: print("All images are already labelled."); raise SystemExit
 
 def save():
     for name, pts in pts_db.items():
@@ -43,4 +43,4 @@ while 0 <= pos < len(todo):
         elif k in (ord(" "), ord("n"), 13): pts_db[name] = [list(p) for p in pts]; pts.clear(); pos += 1; save(); break
         elif k == ord("b"): pts.clear(); pos = max(0, pos-1); break
         elif k == ord("q"): pts_db[name] = [list(p) for p in pts]; save(); raise SystemExit
-save(); print("Xong.")
+save(); print("Done.")
